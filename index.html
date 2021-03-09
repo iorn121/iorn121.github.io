@@ -9,9 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 </head>
 <body>
+        <header>
             <h1 class="title">
                 Doshow Platform
             </h1>
+        </header>
 <div id="app">
     <div class="title-container">
         <div class="filters">
@@ -26,7 +28,7 @@
     <transition-group class="projects" name="projects" >
         <div class="project" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in projects">
             <div class="project-image-wrapper">
-                <a v-bind:href="'https://iorn121.github.io/' + project.title + '.html"><img class="project-image" v-bind:src="project.image"></a>
+                <a v-bind:href="'https://iorn121.github.io/' + project.title"><img class="project-image" v-bind:src="project.image"></a>
                 <div class="gradient-overlay"></div>
                 <div class="post-area">
                     <span class="project-title" >{{project.title}}</span>
