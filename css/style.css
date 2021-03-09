@@ -9,7 +9,7 @@ Theme Name: photo-gallery
 }
 html,body {
     margin:0;
-    font-family: 'Architects Daughter', 'Patrick Hand', 'Dawning of a New Day', cursive;
+    font-family: 'Architects Daughter', cursive;
     background-image: url("../images/bg-image1.jpg");
 }
 
@@ -31,7 +31,7 @@ h1 {
 }
 
 .project-title {
-    font-size:16pt;
+    font-size:18pt;
 }
 .filters {
     padding: 8px;
@@ -134,8 +134,8 @@ h1 {
     align-items: center;
 }
 .post-area span {
-    font-size: 15px;
-    font-family: 'Architects Daughter';
+    font-size: 18px;
+    font-family:  'Patrick Hand', 'Dawning of a New Day', cursive;
     padding: 6px 6px 6px 10px;
     text-align: center;
     position: relative;
