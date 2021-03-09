@@ -20,7 +20,6 @@ h1 {
 
 a {
     text-decoration: none;
-    color: darkslategrey;
 }
 
 .title-container {
@@ -145,10 +144,11 @@ a {
     align-items: center;
 }
 .post-area span {
-    font-size: 18px;
+    font-size: 22px;
     font-family:  'Architects Daughter', cursive;
     padding: 6px 6px 6px 10px;
     text-align: center;
+    color: darkslategrey;
     position: relative;
     background: linear-gradient(to right, #ffffcc 0px, #f1f1c1 0.5px, #f1f1c1 6.5px, #ffffcc 7px);
 }
@@ -162,6 +162,7 @@ a {
     height: 20px;
     width: 80%;
     background: rgba(0,0,0,0.5);
+    color: darkslategrey;
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
     transform: rotate(4deg);
 }
