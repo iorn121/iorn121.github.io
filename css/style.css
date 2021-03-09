@@ -13,6 +13,15 @@ html,body {
     background-image: url("../images/bg-image1.jpg");
 }
 
+h1 {
+    font-family: 'Architects Daughter', cursive;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
 .title-container {
     display:flex;
     flex-direction:column;
@@ -29,11 +38,6 @@ html,body {
 .header {
     justify-content:center;
     align-items:center;
-}
-
-h1 {
-    font-family: 'Architects Daughter', cursive;
-    text-align: center;
 }
 
 .project-title {
