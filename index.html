@@ -9,13 +9,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-    <div class="title-container">
         <div>
             <h1 class="title">
                 Doshow Platform
             </h1>
         </div>
+<div id="app">
+    <div class="title-container">
         <div class="filters">
             <span class="filter" v-bind:class="{ active: currentFilter === 'ALL' }" v-on:click="setFilter('ALL')">ALL</span>
             <span class="filter" v-bind:class="{ active: currentFilter === 'Art' }" v-on:click="setFilter('Art')">Art</span>
