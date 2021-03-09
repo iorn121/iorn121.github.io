@@ -12,7 +12,7 @@ new Vue({
                     Interest
                     Others
             */
-            {title: "AtCoder", category: 'Study', image: "../images/images/AtCoderThumb.png"}
+            {title: "AtCoder", category: 'Study', image: "../images/AtCoderThumb.png"}
         ],
         shuffle_photo: []
         }

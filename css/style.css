@@ -5,7 +5,7 @@ Theme Name: photo-gallery
 */
 @font-face {
     font-family: 'TireShop';
-    src: url(./font/tireshop_demo.ttf);
+    src: url(../font/tireshop_demo.ttf);
 }
 html,body {
     margin:0;
