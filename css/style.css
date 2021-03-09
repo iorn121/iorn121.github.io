@@ -26,6 +26,11 @@ html,body {
     font-family: 'TireShop';
 }
 
+.header {
+    justify-content:center;
+    align-items:center;
+}
+
 h1 {
     font-family: 'Architects Daughter', cursive;
 }
