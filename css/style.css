@@ -24,7 +24,6 @@ html,body {
     font-size:25pt;
     font-weight:normal;
     font-family: 'TireShop';
-    text-align: center;
 }
 
 .header {
@@ -34,6 +33,7 @@ html,body {
 
 h1 {
     font-family: 'Architects Daughter', cursive;
+    text-align: center;
 }
 
 .project-title {
