@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>test page</title>
-  <link rel="stylesheet" type="text/css" href="index.css"/>
-  <script src="index.js"></script>
+    <meta charset="utf-8">
+    <title>Doshow Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  Hello world
-  <button onclick="showSum()"">SUM</button>
+<div id="app">
+    <div class="title-container">
+        <div>
+            <h1 class="title">
+                Doshow Platform
+            </h1>
+        </div>
+        <div class="filters">
+            <span class="filter" v-bind:class="{ active: currentFilter === 'ALL' }" v-on:click="setFilter('ALL')">ALL</span>
+            <span class="filter" v-bind:class="{ active: currentFilter === 'Art' }" v-on:click="setFilter('Architecture')">Art</span>
+            <span class="filter" v-bind:class="{ active: currentFilter === 'Study' }" v-on:click="setFilter('Landscape')">Study</span>
+            <span class="filter" v-bind:class="{ active: currentFilter === 'Interest' }" v-on:click="setFilter('Composite')">Interest</span>
+            <span class="filter" v-bind:class="{ active: currentFilter === 'Others' }" v-on:click="setFilter('Others')">Others</span>
+        </div>
+    </div>
+
+    <transition-group class="projects" name="projects" >
+        <div class="project" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in projects">
+            <div class="project-image-wrapper">
+                <img class="project-image" v-bind:src="project.image">
+                <div class="gradient-overlay"></div>
+                <div class="post-area">
+                    <span class="project-title" >{{project.title}}</span>
+                    <span class="project-title" >{{project.category}}</span>
+                </div>
+            </div>
+        </div>
+    </transition-group>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="./js/script.js"></script>
+
+
 </body>
 </html>
