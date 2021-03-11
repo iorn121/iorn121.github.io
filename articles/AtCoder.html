@@ -28,7 +28,7 @@
     <transition-group class="projects" name="projects" >
         <div class="project" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in projects">
             <div class="project-image-wrapper">
-                <a v-bind:href="project.link"><img class="project-image" v-bind:src="project.image"></a>
+               <img class="project-image" v-bind:src="project.image">
                 <div class="gradient-overlay"></div>
                 <div class="post-area">
                     <span class="project-title" >{{project.title}}</span>

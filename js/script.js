@@ -12,11 +12,11 @@ new Vue({
                     Interest
                     Others
             */
-            {title: "AtCoder", category: 'Study', image: "../images/AtCoderThumb.png"},
-            {title: "Movie", category: 'Art', image: "../images/MovieThumb.png"},
-            {title: "Novel", category: 'Art', image: "../images/NovelThumb.png"},
-            {title: "VTuber", category: 'Interest', image: "../images/VTuberThumb.png"},
-            {title: "Photo", category: 'Art', image: "../images/PhotoThumb.png"}
+            {title: "AtCoder", category: 'Study', image: "../images/AtCoderThumb.png", url:"https://atcoder.jp/users/Iorn"},
+            {title: "Movie", category: 'Art', image: "../images/MovieThumb.png", url:"https://www.youtube.com/channel/UCjQq82FU2vNtW_bF6T011bA"},
+            {title: "Novel", category: 'Art', image: "../images/NovelThumb.png", url:"https://note.com/doshow_novel/m/m7bb8325986f0"},
+            {title: "VTuber", category: 'Interest', image: "../images/VTuberThumb.png", url:"https://www.youtube.com/channel/UCjQq82FU2vNtW_bF6T011bA"},
+            {title: "Photo", category: 'Art', image: "../images/PhotoThumb.png", url:"https://www.instagram.com/doshow_art/"}
         ],
         shuffle_photo: []
         }
