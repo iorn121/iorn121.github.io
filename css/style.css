@@ -45,12 +45,14 @@ a {
 }
 .filters {
     padding: 8px;
-    background: rgba(0,247,156,0.2);
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     font-kerning: normal;
+}
+.bg-top {
+    background: rgba(0,247,156,0.2);
 }
 .filter {
     padding: 3px 3px;
