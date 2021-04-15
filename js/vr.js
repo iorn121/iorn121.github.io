@@ -5,14 +5,7 @@ new Vue({
       return {
       currentFilter: 'ALL',
       projects: [
-          /*
-              category
-                  Art
-                  Study
-                  Interest
-                  Others
-          */
-          {title: "RelaxingGasshoZukuri", category: "History", image: "", url:""}
+          {title: "GasshoZukuri", category: "History", image: "./images/RelaxingGasshoZukuri_Moment1.jpg", url:"https://youtu.be/po9eoQBwmWc"}
       ],
       shuffle_photo: []
       }
