@@ -52,6 +52,9 @@ a {
     font-kerning: normal;
 }
 .bg-top {
+    background: rgba(98, 98, 98, 0.2);
+}
+.bg-novel {
     background: rgba(0,247,156,0.2);
 }
 .bg-vr {
