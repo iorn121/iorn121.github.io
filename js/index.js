@@ -15,7 +15,7 @@ new Vue({
             {title: "AtCoder", category: 'Study', image: "../images/AtCoderThumb.png", url:"https://atcoder.jp/users/Iorn"},
             {title: "Movie", category: 'Art', image: "../images/MovieThumb.png", url:"https://www.youtube.com/channel/UCjQq82FU2vNtW_bF6T011bA"},
             {title: "Novel", category: 'Art', image: "../images/NovelThumb.png", url:"https://note.com/doshow_novel/m/m7bb8325986f0"},
-            {title: "VTuber", category: 'Study', image: "../images/ColorSchemeThumb.png", url:"http://icc-heroku.herokuapp.com/"},
+            {title: "ColorScheme", category: 'Study', image: "../images/ColorSchemeThumb.png", url:"http://icc-heroku.herokuapp.com/"},
             {title: "Photo", category: 'Art', image: "../images/PhotoThumb.png", url:"https://www.instagram.com/doshow_art/"}
         ],
         shuffle_photo: []
