@@ -7,16 +7,26 @@ new Vue({
         projects: [
             /*
                 category
-                    Art
+                    Enjoy
                     Study
-                    Interest
+                    Create
                     Others
             */
+            {title: "Novel", category: 'Enjoy', image: "../images/NovelThumb.png", url:"https://note.com/doshow_novel/m/m7bb8325986f0"},
+            {title: "Movie", category: 'Enjoy', image: "../images/MovieThumb.png", url:"https://www.youtube.com/channel/UCjQq82FU2vNtW_bF6T011bA"},
+            {title: "Animation", category: 'Enjoy', image: "../images/NovelThumb.png", url:"https://note.com/doshow_novel/m/m7bb8325986f0"},
+            {title: "Comic", category: 'Enjoy', image: "../images/MovieThumb.png", url:"https://www.youtube.com/channel/UCjQq82FU2vNtW_bF6T011bA"},
             {title: "AtCoder", category: 'Study', image: "../images/AtCoderThumb.png", url:"https://atcoder.jp/users/Iorn"},
-            {title: "Movie", category: 'Art', image: "../images/MovieThumb.png", url:"https://www.youtube.com/channel/UCjQq82FU2vNtW_bF6T011bA"},
-            {title: "Novel", category: 'Art', image: "../images/NovelThumb.png", url:"https://note.com/doshow_novel/m/m7bb8325986f0"},
-            {title: "ColorScheme", category: 'Study', image: "../images/ColorSchemeThumb.png", url:"http://icc-heroku.herokuapp.com/"},
-            {title: "Photo", category: 'Art', image: "../images/PhotoThumb.png", url:"https://www.instagram.com/doshow_art/"}
+            {title: "Books", category: 'Study', image: "../images/AtCoderThumb.png", url:"https://atcoder.jp/users/Iorn"},
+            {title: "Folklore", category: 'Study', image: "../images/AtCoderThumb.png", url:"https://atcoder.jp/users/Iorn"},
+            {title: "Writing", category: 'Create', image: "../images/NovelThumb.png", url:"https://note.com/doshow_novel/m/m7bb8325986f0"},
+            {title: "Application", category: 'Create', image: "../images/ColorSchemeThumb.png", url:"http://icc-heroku.herokuapp.com/"},
+            {title: "VR", category: 'Create', image: "../images/VRThumb.png", url:"https://iorn121.github.io/vr"},
+            {title: "Music", category: 'Create', image: "../images/ColorSchemeThumb.png", url:"http://icc-heroku.herokuapp.com/"},
+            {title: "Photo", category: 'Create', image: "../images/PhotoThumb.png", url:"https://www.instagram.com/doshow_art/"},
+            {title: "3DCG", category: 'Create', image: "../images/PhotoThumb.png", url:"https://www.instagram.com/doshow_art/"},
+            {title: "Biography", category: 'Others', image: "../images/BiographyThumb.png", url:"https://www.instagram.com/doshow_art/"},
+            {title: "SightSeeing", category: 'Others', image: "../images/BiographyThumb.png", url:"https://www.instagram.com/doshow_art/"}
         ],
         shuffle_photo: []
         }
