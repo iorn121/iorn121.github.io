@@ -21,12 +21,12 @@ new Vue({
             {title: "Folklore", category: 'Study', image: "../images/AtCoderThumb.png", url:"https://atcoder.jp/users/Iorn"},
             {title: "Writing", category: 'Create', image: "../images/NovelThumb.png", url:"https://note.com/doshow_novel/m/m7bb8325986f0"},
             {title: "Application", category: 'Create', image: "../images/ColorSchemeThumb.png", url:"http://icc-heroku.herokuapp.com/"},
-            {title: "VR", category: 'Create', image: "../images/VRThumb.png", url:"https://iorn121.github.io/vr"},
+            {title: "VR", category: 'Create', image: "../images/VRThumb.jpg", url:"https://iorn121.github.io/vr"},
             {title: "Music", category: 'Create', image: "../images/ColorSchemeThumb.png", url:"http://icc-heroku.herokuapp.com/"},
             {title: "Photo", category: 'Create', image: "../images/PhotoThumb.png", url:"https://www.instagram.com/doshow_art/"},
             {title: "3DCG", category: 'Create', image: "../images/PhotoThumb.png", url:"https://www.instagram.com/doshow_art/"},
             {title: "Biography", category: 'Others', image: "../images/BiographyThumb.png", url:"https://www.instagram.com/doshow_art/"},
-            {title: "SightSeeing", category: 'Others', image: "../images/BiographyThumb.png", url:"https://www.instagram.com/doshow_art/"}
+            {title: "SightSeeing", category: 'Others', image: "../images/BiographyThumb.jpg", url:"https://www.instagram.com/doshow_art/"}
         ],
         shuffle_photo: []
         }
