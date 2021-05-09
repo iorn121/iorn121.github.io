@@ -25,7 +25,7 @@ new Vue({
             {title: "Music", category: 'Create', image: "../images/ColorSchemeThumb.png", url:"http://icc-heroku.herokuapp.com/"},
             {title: "Photo", category: 'Create', image: "../images/PhotoThumb.png", url:"https://www.instagram.com/doshow_art/"},
             {title: "3DCG", category: 'Create', image: "../images/PhotoThumb.png", url:"https://www.instagram.com/doshow_art/"},
-            {title: "Biography", category: 'Others', image: "../images/BiographyThumb.png", url:"https://www.instagram.com/doshow_art/"},
+            {title: "Biography", category: 'Others', image: "../images/BiographyThumb.jpg", url:"https://www.instagram.com/doshow_art/"},
             {title: "SightSeeing", category: 'Others', image: "../images/BiographyThumb.jpg", url:"https://www.instagram.com/doshow_art/"}
         ],
         shuffle_photo: []
