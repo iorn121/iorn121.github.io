@@ -24,6 +24,11 @@
             <span class="filter" v-bind:class="{ active: currentFilter === 'Others' }" v-on:click="setFilter('Others')">Others</span>
         </div>
     </div>
+    <div class="clock">
+
+        <div class="circle"></div>
+        <div class="hand"></div>
+    </div>
 
     <transition-group class="projects" name="projects" >
         <div class="project" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in projects">
@@ -32,7 +37,6 @@
                 <div class="gradient-overlay"></div>
                 <div class="post-area">
                     <span class="project-title" >{{project.title}}</span>
-                    <span class="project-title" >{{project.category}}</span>
                 </div>
             </div></a>
         </div>
