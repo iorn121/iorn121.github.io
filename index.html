@@ -23,18 +23,17 @@
             <span class="filter" v-bind:class="{ active: currentFilter === 'Create' }" v-on:click="setFilter('Create')">Create</span>
             <span class="filter" v-bind:class="{ active: currentFilter === 'Others' }" v-on:click="setFilter('Others')">Others</span>
         </div>
-    </div>
+    <!-- </div>
     <div class="clock">
 
         <div class="circle"></div>
         <div class="hand"></div>
-    </div>
+    </div> -->
 
     <transition-group class="projects" name="projects" >
-        <div class="project" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in projects">
+        <div class="project memox" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in projects">
             <a v-bind:href="project.url"><div class="project-image-wrapper">
-                <img class="project-image" v-bind:src="project.image">
-                <div class="gradient-overlay"></div>
+                <div class="image-wrapper"><img class="project-image" v-bind:src="project.image"></div>
                 <div class="post-area">
                     <span class="project-title" >{{project.title}}</span>
                 </div>
