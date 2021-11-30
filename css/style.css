@@ -103,9 +103,6 @@ a {
 
 .project {
   transition: all 0.35s ease-in-out;
-  margin: 5px;
-  box-shadow: 0px 1px 2px lightgrey;
-  background-color: #f3f3cd;
   border-radius: 0px;
   width: 280px;
   height: auto;
@@ -113,6 +110,7 @@ a {
   flex-direction: column;
   align-items: center;
 }
+
 .clock {
   display: flex;
   justify-content: center;
@@ -192,7 +190,8 @@ a {
   justify-content: space-evenly;
   align-items: center;
 }
-.post-area span {
+.project-title {
+  box-shadow: 0px -6px 5px -5px #38b48b inset, 0px 8px 4px -8px #38b48b;
   font-size: 24px;
   font-family: "Architects Daughter", cursive;
   padding: 0px;
@@ -203,7 +202,7 @@ a {
 .memox {
   position: relative;
   background: #fffdf8;
-  margin: 15px 5px;
+  margin: 15px 10px;
   padding: 20px 10px 5px 10px;
   transform: rotate(-1deg);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
