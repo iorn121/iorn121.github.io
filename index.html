@@ -32,12 +32,13 @@
 
     <transition-group class="projects" name="projects" >
         <div class="project memox" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in projects">
-            <a v-bind:href="project.url"><div class="project-image-wrapper">
-                <div class="image-wrapper"><img class="project-image" v-bind:src="project.image"></div>
+            <a v-bind:href="project.url" class="image-wrapper">
+                <img class="project-image" v-bind:src="project.image">
+            </a>
                 <div class="post-area">
                     <span class="project-title" >{{project.title}}</span>
                 </div>
-            </div></a>
+            
         </div>
     </transition-group>
 </div>
