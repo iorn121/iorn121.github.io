@@ -12,21 +12,11 @@ new Vue({
                     Create
                     Others
             */
-            {title: "Novel", category: 'Enjoy', image: "../images/NovelThumb.png", url:"https://note.com/doshow_novel/m/m7bb8325986f0"},
-            {title: "Movie", category: 'Enjoy', image: "../images/MovieThumb.png", url:"https://www.youtube.com/channel/UCjQq82FU2vNtW_bF6T011bA"},
-            {title: "Animation", category: 'Enjoy', image: "../images/NovelThumb.png", url:"https://note.com/doshow_novel/m/m7bb8325986f0"},
-            {title: "Comic", category: 'Enjoy', image: "../images/MovieThumb.png", url:"https://www.youtube.com/channel/UCjQq82FU2vNtW_bF6T011bA"},
-            {title: "AtCoder", category: 'Study', image: "../images/AtCoderThumb.png", url:"https://atcoder.jp/users/Iorn"},
-            {title: "Books", category: 'Study', image: "../images/AtCoderThumb.png", url:"https://atcoder.jp/users/Iorn"},
-            {title: "Folklore", category: 'Study', image: "../images/AtCoderThumb.png", url:"https://atcoder.jp/users/Iorn"},
-            {title: "Writing", category: 'Create', image: "../images/NovelThumb.png", url:"https://note.com/doshow_novel/m/m7bb8325986f0"},
-            {title: "Application", category: 'Create', image: "../images/ColorSchemeThumb.png", url:"http://icc-heroku.herokuapp.com/"},
-            {title: "VR", category: 'Create', image: "../images/VRThumb.jpg", url:"https://iorn121.github.io/articles/vr"},
-            {title: "Music", category: 'Create', image: "../images/ColorSchemeThumb.png", url:"http://icc-heroku.herokuapp.com/"},
-            {title: "Photo", category: 'Create', image: "../images/PhotoThumb.png", url:"https://www.instagram.com/doshow_art/"},
-            {title: "3DCG", category: 'Create', image: "../images/PhotoThumb.png", url:"https://www.instagram.com/doshow_art/"},
-            {title: "Biography", category: 'Others', image: "../images/BiographyThumb.jpg", url:"https://www.instagram.com/doshow_art/"},
-            {title: "SightSeeing", category: 'Others', image: "../images/BiographyThumb.jpg", url:"https://www.instagram.com/doshow_art/"}
+            {title: "AtCoder", category: 'Study', image: "../images/thumb_atcoder.png", url:"https://atcoder.jp/users/Iorn"},
+            {title: "VRChat", category: 'Enjoy', image: "../images/thumb_vrchat.jpg", url:"https://vrchat.com/home/user/usr_0c1fec8f-a643-40f2-a884-80b5915a53d7"},
+            {title: "GasshoZukuri VR", category: 'Create', image: "../images/thumb_gasshozukuri.jpg", url:"https://www.youtube.com/watch?v=qT6ygPjV_F0&t=0s"},
+            {title: "Biography", category: 'Others', image: "../images/thumb_biography.jpg", url:""},
+            {title: "Photograph", category: 'Create', image: "../images/thumb_photograph.jpg", url:"https://www.youtube.com/watch?v=qT6ygPjV_F0&t=0s"}
         ],
         shuffle_photo: []
         }
