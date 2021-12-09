@@ -7,22 +7,35 @@ Theme Name: photo-gallery
   font-family: "TireShop";
   src: url(../font/tireshop_demo.ttf);
 }
+@font-face {
+  font-family: "Yosugara";
+  src: url(../font/Yosugara.ttf);
+}
+@font-face {
+  font-family: "Yosugara";
+  src: url(../font/yosugara.ttf);
+}
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Architects Daughter", cursive;
+  font-family: "Architects Daughter", "Yosugara", cursive;
   background-image: url("../images/bg_crumpled_paper.png");
   background-color: #f5f5f5;
 }
 
 h1 {
-  font-family: "Architects Daughter", cursive;
+  font-family: "Architects Daughter", "Yosugara", cursive;
   text-align: center;
 }
 
 a {
   text-decoration: none;
+}
+p {
+  font-family: "Architects Daughter", "Yosugara", cursive;
+  font-size: 22px;
+  margin: 10px;
 }
 
 .title-container {
@@ -52,7 +65,6 @@ a {
   margin: 0 auto;
   height: auto;
 }
-
 .header {
   justify-content: center;
   align-items: center;
