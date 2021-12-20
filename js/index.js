@@ -19,7 +19,8 @@ new Vue({
             {title: "Photograph", category: 'Create', image: "../images/thumb_photograph.jpg", url:"https://www.youtube.com/watch?v=qT6ygPjV_F0&t=0s"},
             {title: "Movie", category: 'Create', image: "../images/thumb_movie.png", url:"https://www.youtube.com/watch?v=qT6ygPjV_F0&t=0s"},
             {title: "Savonius Windmill", category: 'Create', image: "../images/thumb_windmill.jpg", url:"./articles/windmill.html"},
-            {title: "ColorScheme Converter", category: 'Create', image: "../images/thumb_colorscheme.png", url:"https://www.youtube.com/watch?v=qT6ygPjV_F0&t=0s"}
+            {title: "ColorScheme Converter", category: 'Create', image: "../images/thumb_colorscheme.png", url:"https://www.youtube.com/watch?v=qT6ygPjV_F0&t=0s"},
+            {title: "Qiita", category: 'Study', image: "../images/thumb_qiita.jpg", url:"https://qiita.com/iorn121"}
         ],
         shuffle_photo: []
         }

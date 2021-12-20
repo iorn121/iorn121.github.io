@@ -1,51 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Doshow Platform</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
-</head>
-<body>
-        <header>
-            <h1 class="title">
-                Doshow Platform
-            </h1>
-        </header>
-<div id="app">
-    <div class="title-container">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Doshow Platform</h1>
+    </header>
+    <div id="app">
+      <div class="title-container">
         <div class="filters bg-top">
-            <span class="filter" v-bind:class="{ active: currentFilter === 'ALL' }" v-on:click="setFilter('ALL')">ALL</span>
-            <span class="filter" v-bind:class="{ active: currentFilter === 'Enjoy' }" v-on:click="setFilter('Enjoy')">Enjoy</span>
-            <span class="filter" v-bind:class="{ active: currentFilter === 'Study' }" v-on:click="setFilter('Study')">Study</span>
-            <span class="filter" v-bind:class="{ active: currentFilter === 'Create' }" v-on:click="setFilter('Create')">Create</span>
-            <span class="filter" v-bind:class="{ active: currentFilter === 'Others' }" v-on:click="setFilter('Others')">Others</span>
+          <span
+            class="filter"
+            v-bind:class="{ active: currentFilter === 'ALL' }"
+            v-on:click="setFilter('ALL')"
+            >ALL</span
+          >
+          <span
+            class="filter"
+            v-bind:class="{ active: currentFilter === 'Enjoy' }"
+            v-on:click="setFilter('Enjoy')"
+            >Enjoy</span
+          >
+          <span
+            class="filter"
+            v-bind:class="{ active: currentFilter === 'Study' }"
+            v-on:click="setFilter('Study')"
+            >Study</span
+          >
+          <span
+            class="filter"
+            v-bind:class="{ active: currentFilter === 'Create' }"
+            v-on:click="setFilter('Create')"
+            >Create</span
+          >
+          <span
+            class="filter"
+            v-bind:class="{ active: currentFilter === 'Others' }"
+            v-on:click="setFilter('Others')"
+            >Others</span
+          >
         </div>
-    </div>
-    <!-- <div class="clock">
+      </div>
+      <!-- <div class="clock">
 
         <div class="circle"></div>
         <div class="hand"></div>
     </div> -->
 
-    <transition-group class="projects" name="projects" >
-        <div class="project memox" v-if="currentFilter === project.category || currentFilter === 'ALL'" v-bind:key="project.title" v-for="project in projects">
-            <a v-bind:href="project.url" class="image-wrapper">
-                <img class="project-image" v-bind:src="project.image">
+      <transition-group class="projects" name="projects">
+        <div
+          class="project memox"
+          v-if="currentFilter === project.category || currentFilter === 'ALL'"
+          v-bind:key="project.title"
+          v-for="project in projects"
+        >
+          <div class="image-wrapper">
+            <a v-bind:href="project.url">
+              <img class="project-image" v-bind:src="project.image" />
             </a>
-                <div class="post-area">
-                    <span class="project-title" >{{project.title}}</span>
-                </div>
-            
+          </div>
+          <div class="post-area">
+            <span class="project-title">{{project.title}}</span>
+          </div>
         </div>
-    </transition-group>
-</div>
+      </transition-group>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-<script src="./js/index.js"></script>
-
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
