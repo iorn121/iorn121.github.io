@@ -24,18 +24,35 @@ body {
   background-color: #f5f5f5;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Architects Daughter", "Yosugara", cursive;
   text-align: center;
+  color: #5e5e5e;
+}
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 30px;
 }
 
 a {
   text-decoration: none;
+  color: #5e5e5e;
 }
 p {
   font-family: "Architects Daughter", "Yosugara", cursive;
   font-size: 22px;
   margin: 10px;
+  color: #5e5e5e;
+}
+ul li {
+  font-size: 20px;
 }
 
 .title-container {
