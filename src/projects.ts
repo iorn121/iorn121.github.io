@@ -28,12 +28,6 @@ export const projects: Project[] = [
     url: './articles/create/gasshozukuri-vr/',
   },
   {
-    title: 'Biography',
-    category: 'Create',
-    image: './images/thumb_biography.jpg',
-    url: './articles/create/biography/',
-  },
-  {
     title: 'Photograph',
     category: 'Create',
     image: './images/thumb_photograph.jpg',

@@ -38,5 +38,16 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': ['warn', { 'ts-ignore': 'allow-with-description' }],
     '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
   },
+  overrides: [
+    {
+      files: ['tools/**/*.js'],
+      env: {
+        node: true,
+      },
+      rules: {
+        'no-console': 'off',
+      },
+    },
+  ],
   ignorePatterns: ['dist', 'node_modules'],
 };

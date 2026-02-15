@@ -3,6 +3,11 @@ import './ui/site-header';
 import './ui/site-footer';
 import './ui/site-head';
 
+// すべてのサブページでトップと同じ背景テーマを適用
+if (document.body && !document.body.classList.contains('cork')) {
+  document.body.classList.add('cork');
+}
+
 import {
   type Project,
   type ProjectCategory,
