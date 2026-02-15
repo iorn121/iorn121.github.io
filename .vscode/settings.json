@@ -2,35 +2,35 @@
   // このリポジトリを開いたときだけ、IDE（Cursor/VS Code）の見た目で区別する
   "workbench.colorCustomizations": {
     // ---- Brand palette (cork / paper) ----
-    // cork-brown: #3b2a1a / #2f2116, paper: #f3efe7, ink: #2b2b2b
-    "titleBar.activeBackground": "#3b2a1a",
+    // cork-brown (mild): #5a3f2a / #4a3322 / #3f2b1d, paper: #f3efe7
+    "titleBar.activeBackground": "#5a3f2a",
     "titleBar.activeForeground": "#f3efe7",
-    "titleBar.inactiveBackground": "#2f2116",
+    "titleBar.inactiveBackground": "#4a3322",
     "titleBar.inactiveForeground": "#e2d9c9",
 
-    "activityBar.background": "#3b2a1a",
+    "activityBar.background": "#5a3f2a",
     "activityBar.foreground": "#f3efe7",
     "activityBar.inactiveForeground": "#e2d9c9",
     "activityBarBadge.background": "#c74444",
     "activityBarBadge.foreground": "#ffffff",
 
-    "statusBar.background": "#3b2a1a",
+    "statusBar.background": "#5a3f2a",
     "statusBar.foreground": "#f3efe7",
-    "statusBarItem.hoverBackground": "#4a3522",
+    "statusBarItem.hoverBackground": "#6b4a32",
     "statusBar.debuggingBackground": "#5a2d2d",
     "statusBar.debuggingForeground": "#ffffff",
 
     // ---- Side bar / Explorer ----
-    "sideBar.background": "#2a1e14",
+    "sideBar.background": "#3f2b1d",
     "sideBar.foreground": "#f3efe7",
-    "sideBar.border": "#4a3522",
+    "sideBar.border": "#6b4a32",
     "sideBarTitle.foreground": "#f3efe7",
-    "sideBarSectionHeader.background": "#3b2a1a",
+    "sideBarSectionHeader.background": "#5a3f2a",
     "sideBarSectionHeader.foreground": "#f3efe7",
-    "sideBarSectionHeader.border": "#4a3522",
+    "sideBarSectionHeader.border": "#6b4a32",
 
     // ---- Editor ----
-    "editor.background": "#2a1e14",
+    "editor.background": "#3f2b1d",
     "editor.foreground": "#f3efe7",
     "editorCursor.foreground": "#f3efe7",
     "editorLineNumber.foreground": "#cfc7b8",
@@ -45,19 +45,19 @@
     "editor.findMatchBackground": "#ffd16655",
     "editor.findMatchHighlightBackground": "#ffd16633",
     "editor.hoverHighlightBackground": "#b8e99433",
-    "editorWidget.background": "#2f2116",
+    "editorWidget.background": "#4a3322",
     "editorWidget.foreground": "#f3efe7",
-    "editorHoverWidget.background": "#2f2116",
+    "editorHoverWidget.background": "#4a3322",
     "editorHoverWidget.foreground": "#f3efe7",
-    "peekViewEditor.background": "#2a1e14",
+    "peekViewEditor.background": "#3f2b1d",
     "peekViewEditor.matchHighlightBackground": "#ffd16633",
-    "peekViewResult.background": "#2f2116",
-    "peekViewResult.selectionBackground": "#3b2a1a",
-    "peekViewTitle.background": "#3b2a1a",
+    "peekViewResult.background": "#4a3322",
+    "peekViewResult.selectionBackground": "#5a3f2a",
+    "peekViewTitle.background": "#5a3f2a",
     "peekViewTitleLabel.foreground": "#f3efe7",
 
     // ---- Gutter (diff indicators) ----
-    "editorGutter.background": "#2a1e14",
+    "editorGutter.background": "#3f2b1d",
     "editorGutter.addedBackground": "#27ae60",
     "editorGutter.modifiedBackground": "#f2c94c",
     "editorGutter.deletedBackground": "#c74444",
@@ -66,12 +66,12 @@
     "editorGutter.deletedSecondaryBackground": "#c7444466",
 
     // ---- Diff editor ----
-    "diffEditor.border": "#4a3522",
+    "diffEditor.border": "#6b4a32",
     "diffEditor.insertedTextBackground": "#27ae6033",
     "diffEditor.removedTextBackground": "#c7444433",
     "diffEditor.insertedLineBackground": "#27ae601f",
     "diffEditor.removedLineBackground": "#c744441f",
-    "diffEditor.diagonalFill": "#4a3522",
+    "diffEditor.diagonalFill": "#6b4a32",
 
     // ---- Overview ruler (diff markers) ----
     "editorOverviewRuler.addedForeground": "#27ae60",
@@ -79,30 +79,32 @@
     "editorOverviewRuler.deletedForeground": "#c74444",
 
     // ---- Tabs ----
-    "tab.activeBackground": "#2f2116",
+    "tab.activeBackground": "#4a3322",
     "tab.activeForeground": "#f3efe7",
-    "tab.inactiveBackground": "#2a1e14",
+    "tab.inactiveBackground": "#3f2b1d",
     "tab.inactiveForeground": "#e2d9c9",
-    "tab.hoverBackground": "#3b2a1a",
-    "tab.border": "#4a3522",
-    "tab.unfocusedActiveBackground": "#2a1e14",
+    "tab.hoverBackground": "#5a3f2a",
+    "tab.border": "#6b4a32",
+    "tab.unfocusedActiveBackground": "#3f2b1d",
     "tab.unfocusedActiveForeground": "#f3efe7",
-    "tab.unfocusedInactiveBackground": "#22180f",
+    "tab.unfocusedInactiveBackground": "#342416",
     "tab.unfocusedInactiveForeground": "#cfc7b8",
-    "editorGroupHeader.tabsBackground": "#22180f",
-    "editorGroupHeader.tabsBorder": "#4a3522",
-    "editorGroup.border": "#4a3522",
-    "editorGroupHeader.noTabsBackground": "#22180f",
+    "editorGroupHeader.tabsBackground": "#342416",
+    "editorGroupHeader.tabsBorder": "#6b4a32",
+    "editorGroup.border": "#6b4a32",
+    "editorGroupHeader.noTabsBackground": "#3f2b1d",
+    "editorGroup.emptyBackground": "#3f2b1d",
+    "editorGroup.dropBackground": "#5a3f2a55",
 
     // ---- Panel / Terminal ----
-    "panel.background": "#22180f",
-    "panel.border": "#4a3522",
+    "panel.background": "#342416",
+    "panel.border": "#6b4a32",
     "panelTitle.activeBorder": "#f2c94c",
     "panelTitle.activeForeground": "#f3efe7",
     "panelTitle.inactiveForeground": "#cfc7b8",
-    "terminal.background": "#2a1e14",
+    "terminal.background": "#3f2b1d",
     "terminal.foreground": "#f3efe7",
-    "terminal.ansiBlack": "#2a1e14",
+    "terminal.ansiBlack": "#3f2b1d",
     "terminal.ansiWhite": "#f3efe7",
     "terminal.ansiRed": "#c74444",
     "terminal.ansiGreen": "#27ae60",
@@ -112,9 +114,9 @@
     "terminal.ansiCyan": "#8ecdf0",
 
     // ---- Lists / Inputs ----
-    "list.activeSelectionBackground": "#3b2a1a",
+    "list.activeSelectionBackground": "#5a3f2a",
     "list.activeSelectionForeground": "#f3efe7",
-    "list.hoverBackground": "#4a3522",
+    "list.hoverBackground": "#6b4a32",
     "list.hoverForeground": "#f3efe7",
     "input.background": "#f3efe7",
     "input.foreground": "#1f1f1f",
@@ -122,41 +124,41 @@
     "dropdown.background": "#f3efe7",
     "dropdown.foreground": "#1f1f1f",
     "dropdown.border": "#d7cdbb",
-    "quickInput.background": "#2a1e14",
+    "quickInput.background": "#3f2b1d",
     "quickInput.foreground": "#f3efe7",
-    "quickInputTitle.background": "#3b2a1a",
+    "quickInputTitle.background": "#5a3f2a",
 
     // ---- Buttons / Links ----
-    "button.background": "#3b2a1a",
+    "button.background": "#5a3f2a",
     "button.foreground": "#f3efe7",
-    "button.hoverBackground": "#4a3522",
+    "button.hoverBackground": "#6b4a32",
     "textLink.foreground": "#2f80ed",
     "textLink.activeForeground": "#2f80ed",
 
     // ---- Breadcrumbs ----
-    "breadcrumb.background": "#22180f",
+    "breadcrumb.background": "#342416",
     "breadcrumb.foreground": "#e2d9c9",
     "breadcrumb.activeSelectionForeground": "#f3efe7",
     "breadcrumb.focusForeground": "#f3efe7",
 
     // ---- Minimap ----
-    "minimap.background": "#22180f",
+    "minimap.background": "#342416",
 
     // ---- Debug / Badge ----
-    "badge.background": "#3b2a1a",
+    "badge.background": "#5a3f2a",
     "badge.foreground": "#f3efe7",
 
     // ---- Scrollbar ----
-    "scrollbarSlider.background": "#3b2a1a33",
-    "scrollbarSlider.hoverBackground": "#3b2a1a55",
-    "scrollbarSlider.activeBackground": "#3b2a1a77",
+    "scrollbarSlider.background": "#5a3f2a33",
+    "scrollbarSlider.hoverBackground": "#5a3f2a55",
+    "scrollbarSlider.activeBackground": "#5a3f2a77",
 
     // ---- Notifications ----
-    "notificationCenterHeader.background": "#2a1e14",
+    "notificationCenterHeader.background": "#3f2b1d",
     "notificationCenterHeader.foreground": "#f3efe7",
-    "notifications.background": "#2a1e14",
+    "notifications.background": "#3f2b1d",
     "notifications.foreground": "#f3efe7",
-    "notifications.border": "#4a3522",
+    "notifications.border": "#6b4a32",
 
     // ---- Global foregrounds (webviews/chat等にも効くことがある) ----
     "foreground": "#f3efe7",
@@ -165,33 +167,33 @@
     "icon.foreground": "#f3efe7",
 
     // ---- Text blocks (diff/markdown-like views) ----
-    "textBlockQuote.background": "#2f2116",
-    "textBlockQuote.border": "#4a3522",
+    "textBlockQuote.background": "#4a3322",
+    "textBlockQuote.border": "#6b4a32",
     "textPreformat.foreground": "#f3efe7",
-    "textPreformat.background": "#22180f",
-    "textSeparator.foreground": "#4a3522",
+    "textPreformat.background": "#342416",
+    "textSeparator.foreground": "#6b4a32",
 
     // ---- Webview (Chatなど) ----
-    "webviewPanel.background": "#2a1e14",
-    "webviewPanel.border": "#4a3522",
-    "webview.background": "#2a1e14",
+    "webviewPanel.background": "#3f2b1d",
+    "webviewPanel.border": "#6b4a32",
+    "webview.background": "#3f2b1d",
     "webview.foreground": "#f3efe7",
     "webview.linkForeground": "#8ecdf0",
     "webview.linkHoverForeground": "#ffd166",
 
     // ---- Chat (実装依存: 無視されてもOK) ----
-    "chat.requestBackground": "#22180f",
-    "chat.requestBorder": "#4a3522",
-    "chat.slashCommandBackground": "#3b2a1a",
+    "chat.requestBackground": "#342416",
+    "chat.requestBorder": "#6b4a32",
+    "chat.slashCommandBackground": "#5a3f2a",
     "chat.slashCommandForeground": "#f3efe7",
-    "chat.avatarBackground": "#3b2a1a",
+    "chat.avatarBackground": "#5a3f2a",
 
     // ---- Code blocks in text/webviews ----
-    "textCodeBlock.background": "#22180f",
+    "textCodeBlock.background": "#342416",
     "textCodeBlock.foreground": "#f3efe7",
 
     // ---- Peek / Problems / SCM ----
-    "editorMarkerNavigation.background": "#22180f",
+    "editorMarkerNavigation.background": "#342416",
     "editorMarkerNavigationError.background": "#c74444",
     "editorMarkerNavigationWarning.background": "#f2c94c",
     "editorMarkerNavigationInfo.background": "#2f80ed"
