@@ -3,25 +3,44 @@
 /*
 Theme Name: photo-gallery
 */
+:root {
+  /* category colors */
+  --color-enjoy: #ffd166;
+  --color-study: #8ecdf0;
+  --color-create: #b8e994;
+  --color-others: #cdb4db;
+  /* accents */
+  --note-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  --note-shadow-hover: 2px 6px 14px rgba(0, 0, 0, 0.25);
+  /* assets (差し替え用フック) */
+  --cork-size: 256px 256px;
+  --pin-size: 16px;
+  --pin-image: none; /* url('../images/pin-red.png') などに差替可 */
+  --paper-title-bg: #efe7d7;
+  --card-paper-bg: #f6f1e7;
+  --polaroid-tilt: -1.2deg; /* JSから上書き可能 */
+}
 @font-face {
-  font-family: "TireShop";
+  font-family: 'TireShop';
   src: url(../font/tireshop_demo.ttf);
 }
 @font-face {
-  font-family: "Yosugara";
+  font-family: 'Yosugara';
   src: url(../font/Yosugara.ttf);
 }
 @font-face {
-  font-family: "Yosugara";
+  font-family: 'Yosugara';
   src: url(../font/yosugara.ttf);
 }
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: "Architects Daughter", "Yosugara", cursive;
-  background-image: url("../images/bg_crumpled_paper.png");
-  background-color: #f5f5f5;
+  font-family: 'Architects Daughter', 'Yosugara', cursive;
+  background-color: #f3efe7;
+  background-image: url('../images/bg-cork.jpg');
+  background-size: var(--cork-size);
+  background-repeat: repeat;
 }
 
 h1,
@@ -30,9 +49,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Architects Daughter", "Yosugara", cursive;
+  font-family: 'Architects Daughter', 'Yosugara', cursive;
   text-align: center;
-  color: #5e5e5e;
+  color: #f5f5f5;
 }
 h1 {
   font-size: 36px;
@@ -43,13 +62,13 @@ h2 {
 
 a {
   text-decoration: none;
-  color: #5e5e5e;
+  color: #f1f1f1;
 }
 p {
-  font-family: "Architects Daughter", "Yosugara", cursive;
+  font-family: 'Architects Daughter', 'Yosugara', cursive;
   font-size: 22px;
   margin: 10px;
-  color: #5e5e5e;
+  color: #f1f1f1;
 }
 ul li {
   font-size: 20px;
@@ -62,11 +81,28 @@ ul li {
   align-items: center;
 }
 
+.paper-title {
+  margin: 12px 0 6px;
+  padding: 10px 20px;
+  background: var(--paper-title-bg);
+  color: #3e3e3e;
+  font-size: 28px;
+  line-height: 1.2;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.08);
+  transform: rotate(-0.6deg);
+}
+.paper-title small {
+  display: block;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
 .title {
   font-size: 50pt;
   font-weight: normal;
-  font-family: "TireShop";
-  color: #5e5e5e;
+  font-family: 'TireShop';
+  color: #f7f7f7;
 }
 
 .embed-container {
@@ -94,6 +130,15 @@ ul li {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   font-kerning: normal;
+  position: sticky;
+  top: 8px;
+  z-index: 10;
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 10px;
 }
 .bg-top {
   background: rgba(54, 54, 54, 0.2);
@@ -105,21 +150,33 @@ ul li {
   background: rgba(148, 86, 206, 0.2);
 }
 .filter {
-  padding: 3px 3px;
-  margin: 3px 0px;
+  padding: 4px 10px;
+  margin: 2px 0px;
   cursor: pointer;
   border-radius: 6px;
   transition: all 0.35s;
   font-size: 20px;
-  color: #5e5e5e;
+  color: #f1f1f1;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
 .filter.active {
-  box-shadow: 0.8px 2.5px 1.5px 1px #00000026;
+  background: rgba(0,0,0,0.45);
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.35);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.28);
 }
 
 .filter:hover {
-  background: lightgray;
+  background: rgba(255,255,255,0.12);
+}
+
+.filter:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.6);
+  outline-offset: 2px;
 }
 
 .projects {
@@ -127,22 +184,9 @@ ul li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 6px 8px;
 }
 
-.projects-enter {
-  transform: scale(0.5) translatey(-80px);
-  opacity: 0;
-}
-
-.projects-leave-to {
-  transform: translatey(30px);
-  opacity: 0;
-}
-
-.projects-leave-active {
-  position: absolute;
-  z-index: -1;
-}
 
 .project {
   transition: all 0.35s ease-in-out;
@@ -179,16 +223,13 @@ ul li {
 }
 @keyframes r4 {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(var(--rotation-angle));
   }
   100% {
     transform: rotate(360deg);
   }
 }
 
-.project-image-wrapper {
-  position: relative;
-}
 
 .project-image {
   width: 100%;
@@ -202,22 +243,22 @@ ul li {
   border: 1px solid #ddd;
 }
 .image-wrapper::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   border: 50px solid transparent;
-  border-bottom: 50px solid #fffdf8;
+  border-bottom: 50px solid var(--card-paper-bg);
   bottom: -56px;
   right: -56px;
   box-shadow: 0px 7px 6px -9px black;
   transform: rotate(135deg);
 }
 .image-wrapper::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   border: 50px solid transparent;
-  border-top: 50px solid #fffdf8;
+  border-top: 50px solid var(--card-paper-bg);
   top: -56px;
   left: -56px;
   box-shadow: 0px -7px 6px -9px black;
@@ -234,24 +275,56 @@ ul li {
   align-items: center;
 }
 .project-title {
-  box-shadow: 0px -6px 5px -5px #38b48b inset, 0px 8px 4px -8px #38b48b;
+  box-shadow:
+    0px -6px 5px -5px #38b48b inset,
+    0px 8px 4px -8px #38b48b;
   font-size: 24px;
-  font-family: "Architects Daughter", cursive;
+  font-family: 'Architects Daughter', cursive;
   padding: 0px;
   text-align: center;
-  color: #5e5e5e;
+  color: #f7f7f7;
   position: relative;
 }
 .memox {
   position: relative;
-  background: #fffdf8;
+  background: var(--card-paper-bg);
   margin: 15px 10px;
   padding: 20px 10px 5px 10px;
   transform: rotate(-1deg);
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--note-shadow);
 }
+.memox:hover {
+  transform: rotate(0.5deg) translateY(-2px);
+  box-shadow: var(--note-shadow-hover);
+}
+/* memox(付箋)内の文字色をTOPページ同様の黒系に統一 */
+.memox,
+.memox p,
+.memox a,
+.memox h1,
+.memox h2,
+.memox h3,
+.memox h4,
+.memox h5,
+.memox h6 {
+  color: #2b2b2b;
+}
+.memox .project-title {
+  color: #2b2b2b;
+}
+.memox .project-link {
+  color: #2b2b2b;
+  border-bottom: none;
+}
+/* category colors for memo background */
+.project.memox.cat-Enjoy { background: var(--color-enjoy); }
+.project.memox.cat-Study { background: var(--color-study); }
+.project.memox.cat-Create { background: var(--color-create); }
+.project.memox.cat-Others { background: var(--color-others); }
+/* optional: tweak sticker contrast per category if必要 */
+/* C案用のcircle装飾は不使用 */
 .memox::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 50%;
   top: -15px;
@@ -262,3 +335,111 @@ ul li {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   transform: rotate(-4deg);
 }
+
+/* Biography 専用のフラット版メモ（傾きを無効化） */
+.bio-note {
+  transform: none;
+}
+.bio-note:hover {
+  transform: none;
+}
+
+body.cork {
+  background-color: #f3efe7;
+  background-size: var(--cork-size);
+  background-repeat: repeat;
+}
+.polaroid {
+  background: transparent;
+  margin: 18px 12px;
+  padding: 0;
+  transform: rotate(var(--polaroid-tilt));
+  box-shadow: var(--note-shadow);
+  position: relative;
+}
+.polaroid:hover {
+  transform: rotate(calc(var(--polaroid-tilt) + 1.4deg)) translateY(-2px);
+  box-shadow: var(--note-shadow-hover);
+}
+.polaroid .polaroid-frame {
+  background: var(--card-paper-bg);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  padding: 10px 10px 10px;
+}
+.polaroid .image-wrapper {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.polaroid .image-wrapper::before,
+.polaroid .image-wrapper::after {
+  display: none;
+}
+.polaroid .project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+.polaroid .pin {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(calc(-60% - 5px));
+  width: var(--pin-size);
+  height: calc(var(--pin-size) + 6px); /* しずく型先端分の高さ */
+  --pin-color: #c74444;
+  z-index: 2;
+}
+.polaroid .pin::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: var(--pin-size);
+  border-radius: 50%;
+  background-image:
+    radial-gradient(circle at 30% 32%, rgba(255,255,255,0.95) 0 30%, rgba(255,255,255,0) 35%),
+    linear-gradient(var(--pin-color), var(--pin-color));
+  border: 1px solid rgba(0,0,0,0.25);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.25), 0 6px 10px rgba(0,0,0,0.22);
+  z-index: 2; /* 針より前面 */
+}
+.polaroid .pin::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: calc(var(--pin-size) - 1px);
+  width: 2px;
+  height: 10px;
+  transform: translateX(-50%) rotate(20deg);
+  background: linear-gradient(180deg, #fefefe 0%, #dadada 30%, #b3b3b3 60%, #8a8a8a 100%);
+  border-radius: 1px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.08) inset;
+  z-index: 1; /* 頭より奥側に配置 */
+}
+.polaroid .post-area {
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+}
+.polaroid .project-title {
+  box-shadow: none;
+  font-size: 22px;
+  color: #2b2b2b;
+}
+.polaroid .project-link {
+  color: #2b2b2b;
+  text-decoration: none;
+  border-bottom: none;
+}
+.polaroid.cat-Enjoy .pin  { --pin-color: #f2c94c; } /* yellow */
+.polaroid.cat-Study .pin  { --pin-color: #2f80ed; } /* blue */
+.polaroid.cat-Create .pin { --pin-color: #27ae60; } /* green */
+.polaroid.cat-Others .pin { --pin-color: #d64d4d; } /* red */
+.polaroid.cat-Enjoy .project-link,
+.polaroid.cat-Study .project-link,
+.polaroid.cat-Create .project-link,
+.polaroid.cat-Others .project-link { border-bottom: none; }
