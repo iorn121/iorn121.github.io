@@ -19,6 +19,10 @@
     "statusBarItem.hoverBackground": "#6b4a32",
     "statusBar.debuggingBackground": "#5a2d2d",
     "statusBar.debuggingForeground": "#ffffff",
+    "statusBarItem.prominentBackground": "#6b4a32",
+    "statusBarItem.prominentForeground": "#f3efe7",
+    "statusBarItem.remoteBackground": "#4a3322",
+    "statusBarItem.remoteForeground": "#f3efe7",
 
     // ---- Side bar / Explorer ----
     "sideBar.background": "#3f2b1d",
@@ -121,6 +125,7 @@
     "input.background": "#f3efe7",
     "input.foreground": "#1f1f1f",
     "input.border": "#d7cdbb",
+    "input.placeholderForeground": "#7a7166",
     "dropdown.background": "#f3efe7",
     "dropdown.foreground": "#1f1f1f",
     "dropdown.border": "#d7cdbb",
@@ -147,6 +152,17 @@
     // ---- Debug / Badge ----
     "badge.background": "#5a3f2a",
     "badge.foreground": "#f3efe7",
+
+    // ---- Toolbars / Icons (SCMのボタン等) ----
+    "toolbar.hoverBackground": "#6b4a32",
+    "toolbar.hoverOutline": "#e2d9c9",
+    "toolbar.activeBackground": "#5a3f2a",
+    "toolbar.activeForeground": "#f3efe7",
+    "toolbar.hoverForeground": "#f3efe7",
+    "toolbar.border": "#6b4a32",
+    "toolbar.background": "#3f2b1d",
+    "toolbar.foreground": "#f3efe7",
+    "actionBar.toggledBackground": "#6b4a32",
 
     // ---- Scrollbar ----
     "scrollbarSlider.background": "#5a3f2a33",
@@ -191,6 +207,19 @@
     // ---- Code blocks in text/webviews ----
     "textCodeBlock.background": "#342416",
     "textCodeBlock.foreground": "#f3efe7",
+
+    // ---- SCM / Git ----
+    "scm.providerBorder": "#6b4a32",
+    "scm.inputBackground": "#3f2b1d",
+    "scm.inputForeground": "#f3efe7",
+    "scm.inputBorder": "#6b4a32",
+    "scm.historyItemStatisticsAddedForeground": "#b8e994",
+    "scm.historyItemStatisticsDeletedForeground": "#ff9a9a",
+    "gitDecoration.addedResourceForeground": "#b8e994",
+    "gitDecoration.modifiedResourceForeground": "#ffd166",
+    "gitDecoration.deletedResourceForeground": "#ff9a9a",
+    "gitDecoration.untrackedResourceForeground": "#8ecdf0",
+    "gitDecoration.ignoredResourceForeground": "#cfc7b8",
 
     // ---- Peek / Problems / SCM ----
     "editorMarkerNavigation.background": "#342416",
