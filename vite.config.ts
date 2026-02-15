@@ -14,7 +14,7 @@ export default defineConfig(({ command }) => {
           { src: 'css', dest: '.' },
           { src: 'articles', dest: '.' },
         ],
-      })
+      }),
     );
   }
   return {

@@ -2,11 +2,12 @@ import '../css/style.css';
 import './ui/site-header';
 import './ui/site-footer';
 import './ui/site-head';
+
 import {
-  projects as rawProjects,
-  shuffleArray,
   type Project,
   type ProjectCategory,
+  projects as rawProjects,
+  shuffleArray,
 } from './projects';
 
 type FilterType = 'ALL' | ProjectCategory;
@@ -14,7 +15,9 @@ type FilterType = 'ALL' | ProjectCategory;
 const FILTERS: FilterType[] = ['ALL', 'Enjoy', 'Study', 'Create'];
 
 function filterProjects(all: readonly Project[], filter: FilterType): Project[] {
-  if (filter === 'ALL') return [...all];
+  if (filter === 'ALL') {
+    return [...all];
+  }
   return all.filter((p) => p.category === filter);
 }
 
@@ -84,7 +87,9 @@ function setupFilters(container: HTMLElement, onChange: (filter: FilterType) => 
 
   container.addEventListener('click', (e) => {
     const target = e.target as HTMLElement | null;
-    if (!target || !target.classList.contains('filter')) return;
+    if (!target || !target.classList.contains('filter')) {
+      return;
+    }
     // ヘッダー生成の<a>をクリックした場合でもSPAで切替
     if ((target as HTMLAnchorElement).tagName === 'A') {
       e.preventDefault();
@@ -110,12 +115,16 @@ function setActiveFilter(container: HTMLElement, value: FilterType): void {
 
 function main(): void {
   const app = document.getElementById('app');
-  if (!app) return;
+  if (!app) {
+    return;
+  }
 
   // フィルタはヘッダー内常設（グローバルに取得）
   const filtersEl = document.querySelector<HTMLElement>('.filters');
   const projectsEl = app.querySelector<HTMLElement>('.projects');
-  if (!filtersEl || !projectsEl) return;
+  if (!filtersEl || !projectsEl) {
+    return;
+  }
 
   const shuffled = shuffleArray(rawProjects);
   // URLクエリ ?filter=Study 等から初期値を決定

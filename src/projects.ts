@@ -1,11 +1,11 @@
 export type ProjectCategory = 'Enjoy' | 'Study' | 'Create';
 
-export interface Project {
+export type Project = {
   title: string;
   category: ProjectCategory;
   image: string;
   url: string;
-}
+};
 
 // 既存のデータを TypeScript 化（画像はルート相対に変更せず、従来パス互換のため先頭に ./ を付与）
 export const projects: Project[] = [
