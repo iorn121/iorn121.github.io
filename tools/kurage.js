@@ -125,7 +125,7 @@ function categoryIndexHtml({ title, cssDepth }) {
       <p>カテゴリ一覧ページです。</p>
     </div>
     <link rel="stylesheet" href="${cssPath}" />
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/site.js"></script>
     <site-footer></site-footer>
   </body>
 </html>
@@ -163,7 +163,7 @@ function articleHtml({ title, cssDepth }) {
       </div>
     </div>
     <link rel="stylesheet" href="${cssPath}" />
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/site.js"></script>
     <site-footer></site-footer>
   </body>
 </html>
