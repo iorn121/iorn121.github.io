@@ -4,9 +4,6 @@ export class SiteHead extends HTMLElement {
     this.ensureTitle(titleAttr);
     this.ensureViewport('width=device-width, initial-scale=1,shrink-to-fit=no');
     this.ensurePreconnect('https://fonts.gstatic.com');
-    this.ensureStylesheet(
-      'https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap',
-    );
     this.ensureFavicon('/favicon.svg', 'image/svg+xml');
   }
 

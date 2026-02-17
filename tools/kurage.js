@@ -36,7 +36,7 @@ Usage:
 Examples:
   npm run kurage -- new-article --category study --slug typescript-notes --title "TypeScriptメモ"
   npm run kurage -- new-article --category create --slug my-tool --title "My Tool" --add-to both --parent . --image ./images/thumb_my_tool.png
-  npm run kurage -- new-article --category enjoy --slug run-notes --title "ランニングメモ" --add-to subpage --parent biography
+  npm run kurage -- new-article --category enjoy --slug run-notes --title "Runningメモ" --add-to subpage --parent biography
   npm run new-page
 `);
 }

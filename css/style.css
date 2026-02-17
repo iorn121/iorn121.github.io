@@ -3,6 +3,8 @@
 /*
 Theme Name: photo-gallery
 */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
 :root {
   /* category colors */
   --color-enjoy: #ffd166;
@@ -22,21 +24,17 @@ Theme Name: photo-gallery
 }
 @font-face {
   font-family: 'TireShop';
-  src: url(../font/tireshop_demo.ttf);
+  src: url('/font/tireshop_demo.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
 }
-@font-face {
-  font-family: 'Yosugara';
-  src: url(../font/Yosugara.ttf);
-}
-@font-face {
-  font-family: 'Yosugara';
-  src: url(../font/yosugara.ttf);
-}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Architects Daughter', 'Yosugara', cursive;
+  font-family: 'Architects Daughter', 'Zen Kurenaido', cursive;
   background-color: #f3efe7;
   background-image: url('../images/bg-cork.jpg');
   background-size: var(--cork-size);
@@ -49,15 +47,31 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Architects Daughter', 'Yosugara', cursive;
+  font-family: 'Architects Daughter', 'Zen Kurenaido', cursive;
   text-align: center;
   color: #f5f5f5;
 }
+
+/* ページ単位で「日本語フォント優先」に揃えたい場合 */
+.font-jp {
+  font-family: 'Zen Kurenaido', 'Architects Daughter', cursive;
+}
+.font-jp h1,
+.font-jp h2,
+.font-jp h3,
+.font-jp h4,
+.font-jp h5,
+.font-jp h6,
+.font-jp p,
+.font-jp li {
+  font-family: inherit;
+}
+
 h1 {
-  font-size: 36px;
+  font-size: clamp(28px, 5.2vw, 36px);
 }
 h2 {
-  font-size: 30px;
+  font-size: clamp(24px, 4.2vw, 30px);
 }
 
 a {
@@ -65,7 +79,7 @@ a {
   color: #f1f1f1;
 }
 p {
-  font-family: 'Architects Daughter', 'Yosugara', cursive;
+  font-family: 'Architects Daughter', 'Zen Kurenaido', cursive;
   font-size: 22px;
   margin: 10px;
   color: #f1f1f1;
@@ -101,7 +115,7 @@ ul li {
 .title {
   font-size: 50pt;
   font-weight: normal;
-  font-family: 'TireShop';
+  font-family: 'TireShop', 'Architects Daughter', 'Zen Kurenaido', cursive;
   color: #f7f7f7;
 }
 
@@ -277,7 +291,7 @@ ul li {
     0px -6px 5px -5px #38b48b inset,
     0px 8px 4px -8px #38b48b;
   font-size: 24px;
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Architects Daughter', 'Zen Kurenaido', cursive;
   padding: 0px;
   text-align: center;
   color: #f7f7f7;
@@ -294,6 +308,56 @@ ul li {
 .memox:hover {
   transform: rotate(0.5deg) translateY(-2px);
   box-shadow: var(--note-shadow-hover);
+}
+
+/* 記事ページ用: 画面からはみ出さない＆傾けない */
+.memox--page {
+  box-sizing: border-box;
+  width: min(860px, calc(100vw - 24px));
+  max-width: 860px;
+  margin: 18px auto;
+  transform: none;
+}
+.memox--page:hover {
+  transform: none;
+  box-shadow: var(--note-shadow-hover);
+}
+
+/* カード（memox）内だけ日本語対応の手書きフォントを優先 */
+.memox .title {
+  font-family: 'ShigotoMemogaki', 'Zen Kurenaido', 'Architects Daughter', system-ui, sans-serif;
+}
+.memox p {
+  font-family: 'ShigotoMemogaki', 'Zen Kurenaido', 'Architects Daughter', system-ui, sans-serif;
+}
+
+/* ページ本文（memox--page）だけ Zen Kurenaido */
+.memox--page p,
+.memox--page li {
+  font-family: 'Zen Kurenaido', 'ShigotoMemogaki', system-ui, sans-serif;
+}
+
+/* セクション見出し・余白を整える（本文より小さく見えないように） */
+.section-group h3,
+.profile-section h3 {
+  font-size: 26px;
+  margin: 22px 0 10px;
+  text-align: left;
+}
+.section-group section + section,
+.profile-section section + section {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.18);
+}
+.section-group p,
+.profile-section p {
+  line-height: 1.75;
+}
+.section-group .experience-list,
+.profile-section .experience-list {
+  margin: 8px 0 0;
+  padding-left: 1.2em;
 }
 /* memox(付箋)内の文字色をTOPページ同様の黒系に統一 */
 .memox,
