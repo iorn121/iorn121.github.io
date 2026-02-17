@@ -16,12 +16,6 @@ export const projects: Project[] = [
     url: 'https://atcoder.jp/users/Iorn',
   },
   {
-    title: 'VRChat',
-    category: 'Enjoy',
-    image: './images/thumb_vrchat.jpg',
-    url: 'https://vrchat.com/home/user/usr_0c1fec8f-a643-40f2-a884-80b5915a53d7',
-  },
-  {
     title: 'GasshoZukuri VR',
     category: 'Create',
     image: './images/thumb_gasshozukuriVR.jpg',
