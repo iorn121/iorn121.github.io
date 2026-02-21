@@ -359,6 +359,49 @@ ul li {
   margin: 8px 0 0;
   padding-left: 1.2em;
 }
+
+/* URLを明示して押しやすいリンク（青リンクっぽさを避ける） */
+.link-item {
+  margin: 10px 0;
+}
+.explicit-link {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.65);
+  color: #2b2b2b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+.explicit-link:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.explicit-link:focus-visible {
+  outline: 2px solid rgba(47, 128, 237, 0.6);
+  outline-offset: 2px;
+}
+.explicit-link__title {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+}
+.explicit-link__url {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  opacity: 0.75;
+  word-break: break-all;
+}
+.explicit-link__desc {
+  margin-top: 8px;
+  font-size: 18px;
+}
 /* memox(付箋)内の文字色をTOPページ同様の黒系に統一 */
 .memox,
 .memox p,
