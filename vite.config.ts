@@ -1,28 +1,34 @@
 import path from 'node:path';
 
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin, type PluginOption } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // 現在のルート直下構成（images, font, css, articles）を維持しつつ dist へコピー
 export default defineConfig(({ command }) => {
-  const plugins = [];
+  const plugins: PluginOption[] = [];
 
   // 開発時は /site.js を仮想的に配信（中身は /src/site.ts を読み込むだけ）
   // 本番(build)では rollup の entry として site.js を生成する
   if (command === 'serve') {
-    plugins.push({
+    const virtualSiteJsPlugin: Plugin = {
       name: 'virtual-site-js',
-      configureServer(server) {
-        server.middlewares.use((req, res, next) => {
-          if (req.url === '/site.js') {
-            res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
-            res.end('import "/src/site.ts";');
-            return;
-          }
-          next();
-        });
+      enforce: 'pre',
+      resolveId(source: string) {
+        const pathname = source.split('?', 1)[0];
+        if (pathname === '/site.js') {
+          return '/site.js';
+        }
+        return null;
       },
-    });
+      load(id: string) {
+        const pathname = id.split('?', 1)[0];
+        if (pathname === '/site.js') {
+          return 'import "/src/site.ts";';
+        }
+        return null;
+      },
+    };
+    plugins.push(virtualSiteJsPlugin);
   }
 
   // 開発時はコピーしない（監視競合を回避）
