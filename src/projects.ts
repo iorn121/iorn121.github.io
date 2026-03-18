@@ -41,6 +41,12 @@ export const projects: Project[] = [
     image: './images/thumb_placeholder.svg',
     url: './articles/enjoy/jellyfish/',
   },
+  {
+    title: '旅行',
+    category: 'Enjoy',
+    image: './images/thumb_placeholder.svg',
+    url: './articles/enjoy/travel/',
+  },
 ];
 
 export function shuffleArray<T>(input: readonly T[]): T[] {
