@@ -402,6 +402,29 @@ ul li {
   margin-top: 8px;
   font-size: 18px;
 }
+
+/* 本文内インラインリンク（青リンクにせず、外部オープンのアイコンで分かる） */
+.memox a.inline-link {
+  text-decoration: none;
+}
+.memox a.inline-link .inline-link__icon {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  margin-left: 0.22em;
+  vertical-align: -0.14em;
+  opacity: 0.52;
+  transition: opacity 0.15s ease;
+}
+.memox a.inline-link:hover .inline-link__icon {
+  opacity: 0.88;
+}
+.memox a.inline-link:focus-visible {
+  outline: 2px solid rgba(47, 128, 237, 0.55);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 /* memox(付箋)内の文字色をTOPページ同様の黒系に統一 */
 .memox,
 .memox p,

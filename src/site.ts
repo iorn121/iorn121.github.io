@@ -1,3 +1,4 @@
+import './ui/external-link-icon';
 import './ui/site-footer';
 import './ui/site-head';
 import './ui/site-header';

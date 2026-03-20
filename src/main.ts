@@ -1,4 +1,5 @@
 import '../css/style.css';
+import './ui/external-link-icon';
 import './ui/site-header';
 import './ui/site-footer';
 import './ui/site-head';
