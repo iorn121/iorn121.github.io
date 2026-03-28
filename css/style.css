@@ -402,6 +402,11 @@ ul li {
   margin-top: 8px;
   font-size: 18px;
 }
+.explicit-link-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
 
 /* 本文内インラインリンク（青リンクにせず、外部オープンのアイコンで分かる） */
 .memox a.inline-link {
