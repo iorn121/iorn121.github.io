@@ -4,6 +4,7 @@ export class SiteHead extends HTMLElement {
     this.ensureTitle(titleAttr);
     this.ensureViewport('width=device-width, initial-scale=1,shrink-to-fit=no');
     this.ensurePreconnect('https://fonts.gstatic.com');
+    this.ensurePreloadImage('/images/bg-cork-tile.jpg');
     this.ensureFavicon('/favicon.svg', 'image/svg+xml');
   }
 
@@ -45,6 +46,20 @@ export class SiteHead extends HTMLElement {
       const l = document.createElement('link');
       l.rel = 'stylesheet';
       l.href = href;
+      document.head.appendChild(l);
+    }
+  }
+
+  private ensurePreloadImage(href: string): void {
+    const exists = document.head.querySelector<HTMLLinkElement>(
+      `link[rel="preload"][as="image"][href="${href}"]`,
+    );
+    if (!exists) {
+      const l = document.createElement('link');
+      l.rel = 'preload';
+      l.as = 'image';
+      l.href = href;
+      l.setAttribute('fetchpriority', 'high');
       document.head.appendChild(l);
     }
   }

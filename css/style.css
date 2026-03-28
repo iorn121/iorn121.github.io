@@ -36,7 +36,7 @@ body {
   padding: 0;
   font-family: 'Architects Daughter', 'Zen Kurenaido', cursive;
   background-color: #f3efe7;
-  background-image: url('../images/bg-cork.jpg');
+  background-image: url('../images/bg-cork-tile.jpg');
   background-size: var(--cork-size);
   background-repeat: repeat;
 }
