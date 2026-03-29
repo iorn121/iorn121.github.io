@@ -301,7 +301,7 @@ ul li {
   position: relative;
   background: var(--card-paper-bg);
   margin: 15px 10px;
-  padding: 20px 10px 5px 10px;
+  padding: 20px 18px 5px 18px;
   transform: rotate(-1deg);
   box-shadow: var(--note-shadow);
 }
@@ -358,6 +358,10 @@ ul li {
 .profile-section .experience-list {
   margin: 8px 0 0;
   padding-left: 1.2em;
+}
+.section-group .experience-list.experience-list--wide-indent,
+.profile-section .experience-list.experience-list--wide-indent {
+  padding-left: 2em;
 }
 
 /* URLを明示して押しやすいリンク（青リンクっぽさを避ける） */
