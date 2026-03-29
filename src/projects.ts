@@ -10,7 +10,7 @@ export type Project = {
 // 既存のデータを TypeScript 化（画像はルート相対に変更せず、従来パス互換のため先頭に ./ を付与）
 export const projects: Project[] = [
   {
-    title: 'Running',
+    title: 'ランニング',
     category: 'Enjoy',
     image: './images/thumb_placeholder.svg',
     url: './articles/enjoy/running/',
