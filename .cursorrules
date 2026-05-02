@@ -1,0 +1,98 @@
+# iorn121.github.io — Cursor エージェント向け憲法
+
+本ファイルは最優先の拘束規則とする。矛盾する指示があれば本ファイルを優先する。
+
+---
+
+## 1. 技術スタック（固定・変更不可とみなす前提）
+
+- **ランタイム**: Node.js（CI は 20 系）。パッケージマネージャは **npm**（`package-lock.json` を正とする）。
+- **言語**: TypeScript（`strict: true`）。ビルドは型チェックのみ（`noEmit: true`）。
+- **バンドラ**: Vite 5。エントリは `index.html` → `src/main.ts`（トップ）、記事等サブページは `src/site.ts` → ビルド成果物 `site.js`。
+- **UI**: フレームワークは使用しない。**ネイティブ Web Components**（`HTMLElement` 継承、`customElements.define`）と DOM API が標準。
+- **スタイル**: グローバル CSS（`css/style.css`）。ビルド時に `images` / `font` / `css` / `articles` を `dist` へ静的コピー（`vite-plugin-static-copy`）。
+- **品質ツール**: ESLint（`@typescript-eslint` + Prettier + `simple-import-sort`）、Prettier、Husky + lint-staged（pre-commit）。
+- **デプロイ**: GitHub Actions（`main` / `master` プッシュ）→ `npm run build` の `dist` を GitHub Pages へ。
+
+上記と異なるフレームワーク導入・エントリ構成の変更は、**別ドキュメントで合意がない限り行わない**。
+
+---
+
+## 2. ディレクトリ構造とファイルの正しい配置
+
+| 種別 | 配置 |
+|------|------|
+| アプリ TS（エントリ・ロジック） | `src/` 直下（例: `main.ts`, `site.ts`, `projects.ts`） |
+| Web Components・UI 部品 | `src/ui/*.ts` |
+| アイコン等の静的アセット（ビルド取り込み用） | `src/icons/` 等、`src` 配下 |
+| グローバル CSS | `css/style.css`（`main.ts` から import） |
+| ルート直下の静的ファイル（画像・記事 HTML ツリー） | `images/`, `articles/`, 必要なら `font/` — **Vite がビルド時にコピーする前提のレイアウトを維持** |
+| ルート HTML | `index.html`（トップ）。記事は `articles/<category>/<slug>/index.html` |
+| CLI・記事スキャフォールド | `tools/kurage.js`、`tools/templates/` |
+| CI | `.github/workflows/` |
+| ツール設定 | ルート: `vite.config.ts`, `tsconfig.json`, `.eslintrc.cjs`, `.prettierrc`, `.editorconfig` |
+
+**禁止**: `dist/` / `node_modules/` への手動の永続化ファイル追加。成果物と依存は生成物として扱う。
+
+新規記事ページは **`npm run kurage`**（または `new-page` / `delete-page`）の規約に従う。手作業で `articles/` を増やす場合も、既存カテゴリ（`enjoy` / `study` / `create`）と `kurage` のパス規則と整合させる。
+
+---
+
+## 3. コード品質と制約
+
+- **TypeScript**: `tsconfig.json` の `strict` を維持する。意図的な緩和は `@ts-expect-error` 等に**理由コメント**を付ける（`.eslintrc.cjs` の方針に従う）。
+- **型**: 公開 API・データ構造は `type` 優先（ESLint `consistent-type-definitions`）。`any` は回避。 import は `import type` を優先。
+- **比較・制御構文**: `eqeqeq`（`===`）。`switch` は fallthrough 禁止（TS `noFallthroughCasesInSwitch`）。
+- **エラーハンドリング**: 想定外は `throw new Error` またはユーザー向けメッセージを明示。CLI（`tools/kurage.js`）は対話・終了コードで失敗を判別可能にする。ブラウザ側はサイレント失敗を避け、`console.error` または UI 上のフォールバックを検討（本サイトは静的軽量 UI が前提）。
+- **import 順**: `simple-import-sort` に従う。
+- **外部ライブラリ追加**: **デフォルトは追加しない**。追加する場合は (1) バンドルサイズ・メンテナンス・代替（標準 API / 既存コード）を比較し、(2) `devDependencies` vs `dependencies` を明確化し、(3) 本憲法または `docs/` の仕様に根拠を記載する。
+
+---
+
+## 4. 単一真実源（SSOT）
+
+- **プロジェクト一覧（トップのカードデータ）**: `src/projects.ts` のみ。新規記事をトップに載せる場合はここを更新する。カテゴリは `ProjectCategory` と一致させる。
+- **サイト共通メタ・ヘッダー・フッターの振る舞い**: `src/ui/` の各コンポーネント。文言・パスのデフォルトはコンポーネント側の単一ロジックに集約する。
+- **ビルドの public path / コピー対象**: `vite.config.ts`。`base` や `viteStaticCopy` の targets を変更する場合はデプロイ先 URL との整合を確認する。
+- **解析タグ・計測 ID 等**: 現状は HTML 内に埋め込みがある。**新規追加・変更時は** 可能なら一ファイル（または `src/` 内の設定モジュール）に集約し、同一値の重複定義を禁止する。
+- **環境変数**: リポジトリにシークレットをコミットしない。クライアントに露出する値は「公開前提」であることを確認する。
+
+ハードコードは避ける。やむを得ない固定値は **名前付き定数** または **上記 SSOT の一点** に置く。
+
+---
+
+## 5. AI エージェント自律ワークフロー（強制）
+
+ユーザー依頼への対応は、次の順序を**例外なく**踏む。ユーザーが「実装だけ」と明示した場合でも、**軽量な仕様メモ（docs）と承認**をスキップしない。緊急のタイポ・設定値1行のみの修正は、仕様を `docs/` に**1ファイルの追記**で代替可。
+
+1. **仕様作成**: `docs/` 配下に Markdown で要件・スコープ・非スコープ・影響ファイルを書く（既存 `docs/` が無ければ作成する）。
+2. **ユーザー承認**: 仕様を提示し、承認または修正指示を得る。
+3. **実装**: 承認内容のみを変更する。本憲法とリポジトリ慣習に従う。
+4. **検証**: 下記「検証」を実行し、結果を要約する。
+
+---
+
+## 6. 検証（編集完了後に必ず提案・実行）
+
+ローカルで次を実行する。修正に応じて範囲を調整してよいが、**少なくとも `lint` と `build`** は通過必須。
+
+```bash
+npm run lint
+npm run build
+```
+
+必要に応じて:
+
+```bash
+npm run format
+npm run preview
+```
+
+pre-commit と同等のチェックは `npx lint-staged` が Husky から呼ばれる。PR 前にローカルで `lint` / `build` を確認する。
+
+---
+
+## 7. 応答スタイル（エージェント自身への指示）
+
+- 憲法に反しない範囲で、ユーザーへの最終応答は **日本語**、簡潔に。
+- 実装説明は必要最小限。憲法ファイルの全文繰り返しは避ける。
