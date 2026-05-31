@@ -63,6 +63,7 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 | quant-ops           | `../quant-ops/README.md`           | PR 向け CI なし、README と universe.json 手順不一致       |
 | shinjuku-chronowalk | `../shinjuku-chronowalk/README.md` | 正解判定未接続、README/実装大乖離、docs/ なし             |
 | tabi-no-shiori      | `../tabi-no-shiori/README.md`      | トップ UX、CLI スキャフォールド、LICENSE なし             |
+| rhythm-mile         | `../rhythm-mile/README.md`         | PRD 先行・GPS/ルート未実装、子ページ同期                  |
 
 ### 横断テーマ（ポートフォリオ掲載 repo）
 
