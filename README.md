@@ -74,6 +74,27 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 
 ---
 
+## 今後の対応策
+
+優先度の高い項目は **改善点バックログ** を参照。以下はマイルストーン別の進め方。
+
+### 短期（hygiene PR merge）
+
+- **まず [PR #5](https://github.com/iorn121/iorn121.github.io/pull/5) をマージ** — Dependabot 有効化、CI で `npm run lint`、フィルタ URL バリデーション、`ShigotoMemogaki` フォント、`html lang` 統一などバックログ P1/P2 の土台
+
+### 中期（P1 機能）
+
+- **子ページ ↔ 各 repo README の同期** — programming 子ページの内容乖離修正と四半期チェックリストのたたき台
+- **サムネイル差し替え** — `src/projects.ts` の placeholder をプロジェクト別画像へ
+- **カテゴリ index の整理** — `articles/{enjoy,study,create}/index.html` と kurage 生成物の二重管理解消
+
+### 長期（ポートフォリオ連携）
+
+- **README ↔ 記事（子ページ）の定期同期** — 各 repo README を正とする方針の運用化
+- **依存の定期監査** — `npm audit` と Dependabot の運用ルール整備
+
+---
+
 ## 改善点バックログ
 
 2026-05-31 時点の監査結果。優先度は `[P1]` 高 / `[P2]` 中 / `[P3]` 低。
