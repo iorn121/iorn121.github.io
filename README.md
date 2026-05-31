@@ -29,17 +29,17 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 
 ## 関連ローカルリポジトリ ↔ ポートフォリオ子ページ
 
-| ローカル repo         | 子ページ slug         | 備考                              |
-| --------------------- | --------------------- | --------------------------------- |
-| `AQUASYNC`            | `aquasync`            | ✓                                 |
-| `Yomu-Kamo`           | `yomu-kamo`           | ✓                                 |
-| `color-verse`         | `color-verse`         | ✓（デモ URL あり）                |
-| `deai`                | `deai`                | ✓                                 |
-| `pocket-museum`       | `pocket-museum`       | ✓                                 |
-| `quant-ops`           | `quant-ops`           | ✓                                 |
-| `shinjuku-chronowalk` | `shinjuku-chronowalk` | ✓                                 |
-| `tabi-no-shiori`      | `tabi-no-shiori`      | ✓                                 |
-| —                     | `rhythm-mile`         | 子ページあり・ローカル clone なし |
+| ローカル repo         | 子ページ slug         | 備考                                                                                  |
+| --------------------- | --------------------- | ------------------------------------------------------------------------------------- |
+| `AQUASYNC`            | `aquasync`            | ✓                                                                                     |
+| `Yomu-Kamo`           | `yomu-kamo`           | ✓                                                                                     |
+| `color-verse`         | `color-verse`         | ✓（デモ URL あり）                                                                    |
+| `deai`                | `deai`                | ✓                                                                                     |
+| `pocket-museum`       | `pocket-museum`       | ✓                                                                                     |
+| `quant-ops`           | `quant-ops`           | ✓                                                                                     |
+| `shinjuku-chronowalk` | `shinjuku-chronowalk` | ✓                                                                                     |
+| `tabi-no-shiori`      | `tabi-no-shiori`      | ✓                                                                                     |
+| —                     | `rhythm-mile`         | 子ページあり・[PR #1](https://github.com/iorn121/rhythm-mile/pull/1) hygiene 作成済み |
 
 ### 監査対象外（アーカイブ済み）
 
@@ -93,8 +93,7 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 | pocket-museum       | [#3](https://github.com/iorn121/pocket-museum/pull/3)       | LICENSE、CI、Dependabot、ESLint                              |
 | quant-ops           | [#3](https://github.com/iorn121/quant-ops/pull/3)           | PR CI、Dependabot、README（universe.json）                   |
 | shinjuku-chronowalk | [#4](https://github.com/iorn121/shinjuku-chronowalk/pull/4) | README/docs、LICENSE、Dependabot、PR build（base: `dev`）    |
-
-- **rhythm-mile** — ローカル clone 後、他 slug と同様に hygiene PR を作成
+| rhythm-mile         | [#1](https://github.com/iorn121/rhythm-mile/pull/1)         | LICENSE、Flutter CI、Dependabot、README roadmap/backlog      |
 
 ### 中期（P1 機能）
 
@@ -124,7 +123,7 @@ npm run new-page   # 記事ページ作成（kurage CLI）
   - `pocket-museum`: 矩形検出・台形補正を実装済み表現だが repo roadmap では未完了 → 文言を現状に合わせる
   - `quant-ops`: backtest / 売買シミュレーションが子ページ未記載
   - `yomu-kamo`: Phase 1.5（本管理 ISBN）等が子ページ未反映
-- [ ] `[P2]` **rhythm-mile** — ローカル clone して子ページ内容を README と整合
+- [ ] `[P2]` **rhythm-mile** — [PR #1](https://github.com/iorn121/rhythm-mile/pull/1) マージ後、子ページ内容を README 実装ステータスと整合
 - [ ] `[P2]` **カテゴリ index ページの陳腐化** — `articles/{enjoy,study,create}/index.html` が手書き・子リンク不完全（kurage 生成物と二重管理）
 - [ ] `[P2]` **フィルタ URL バリデーション** — `?filter=Invalid` がサイレントに ALL 扱い。無効値は ALL にフォールバック＋クエリ正規化
 - [ ] `[P3]` **programming/index.html の言語一覧** — 固定リストが各 repo の実スタック（Flutter, Svelte 5 等）と乖離。動的化 or 定期手動更新
