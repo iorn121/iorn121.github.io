@@ -40,8 +40,14 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 | `shinjuku-chronowalk` | `shinjuku-chronowalk` | ✓                                 |
 | `tabi-no-shiori`      | `tabi-no-shiori`      | ✓                                 |
 | —                     | `rhythm-mile`         | 子ページあり・ローカル clone なし |
-| `bbf-kubernetes`      | —                     | 子ページ未作成                    |
-| `claude-automation`   | —                     | 子ページ未作成                    |
+
+### 監査対象外（アーカイブ済み）
+
+| リポジトリ          | 理由                                                               |
+| ------------------- | ------------------------------------------------------------------ |
+| `MyTemplates`       | Astro テンプレ用途のみ。2026-05-31 アーカイブ                      |
+| `bbf-kubernetes`    | 書籍ハンズオン用 fork。2026-05-31 アーカイブ                       |
+| `claude-automation` | ローカル自動化（launchd）。ポートフォリオ非掲載・README 監査対象外 |
 
 ## 関連プロジェクトの改善点バックログ
 
@@ -57,15 +63,13 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 | quant-ops           | `../quant-ops/README.md`           | PR 向け CI なし、README と universe.json 手順不一致       |
 | shinjuku-chronowalk | `../shinjuku-chronowalk/README.md` | 正解判定未接続、README/実装大乖離、docs/ なし             |
 | tabi-no-shiori      | `../tabi-no-shiori/README.md`      | トップ UX、CLI スキャフォールド、LICENSE なし             |
-| bbf-kubernetes      | `../bbf-kubernetes/README.md`      | probe パス不一致、.gitignore/LICENSE なし                 |
-| claude-automation   | `../claude-automation/README.md`   | カレンダー重複、requirements pin、venv 手順               |
 
-### 横断テーマ（全プロジェクト共通）
+### 横断テーマ（ポートフォリオ掲載 repo）
 
-- **Dependabot**: Yomu-Kamo のみ整備。他 repo は PR #5 等で順次整備中
+- **Dependabot**: Yomu-Kamo のみ整備。他 repo は hygiene PR で順次整備中
 - **LICENSE**: quant-ops / Yomu-Kamo（README のみ MIT）以外は未整備が多い
-- **CI**: deai / AQUASYNC / pocket-museum / claude-automation は未整備
-- **`.env.example`**: claude-automation のみ。Yomu-Kamo は docs 止まり
+- **CI**: hygiene PR 作成済み（AQUASYNC / deai / pocket-museum 等）
+- **`.env.example`**: Yomu-Kamo は docs 止まりで example ファイル欠落
 - **ポートフォリオ子ページ同期**: 各 repo README を正とする方針だが更新プロセス未定義
 
 ---
@@ -86,7 +90,6 @@ npm run new-page   # 記事ページ作成（kurage CLI）
   - `quant-ops`: backtest / 売買シミュレーションが子ページ未記載
   - `yomu-kamo`: Phase 1.5（本管理 ISBN）等が子ページ未反映
 - [ ] `[P2]` **rhythm-mile** — ローカル clone して子ページ内容を README と整合
-- [ ] `[P2]` **bbf-kubernetes / claude-automation** — プログラミング配下への掲載方針を決定
 - [ ] `[P2]` **カテゴリ index ページの陳腐化** — `articles/{enjoy,study,create}/index.html` が手書き・子リンク不完全（kurage 生成物と二重管理）
 - [ ] `[P2]` **フィルタ URL バリデーション** — `?filter=Invalid` がサイレントに ALL 扱い。無効値は ALL にフォールバック＋クエリ正規化
 - [ ] `[P3]` **programming/index.html の言語一覧** — 固定リストが各 repo の実スタック（Flutter, Svelte 5 等）と乖離。動的化 or 定期手動更新
@@ -134,11 +137,10 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 #### 横断（関連 repo）
 
 - [ ] `[P1]` **Dependabot ほぼ未整備** — Yomu-Kamo のみ。他 repo（npm / pub / pip / actions）へ横展開
-- [ ] `[P1]` **`.env.example` 標準化** — claude-automation のみ整備。Yomu-Kamo は docs 止まりで example ファイル欠落
+- [ ] `[P1]` **`.env.example` 標準化** — Yomu-Kamo は docs 止まりで example ファイル欠落
 - [ ] `[P2]` **AQUASYNC** — `.gitignore` に `google-services.json` / `.env` パターンなし（Firebase 導入前に追加）
 - [ ] `[P2]` **Yomu-Kamo** — `backend/.env*.example` 未整備
 - [ ] `[P2]` **color-verse** — `remote-ai-agent.yml` の `CURSOR_API_KEY` 未設定時の失敗を README に明記
-- [ ] `[P2]` **bbf-kubernetes** — CI が Docker Hub secrets 依存。README に secrets 要件・fork 時注意なし
 - [ ] `[P3]` **deai / pocket-museum** — 将来 API キー（Places / Supabase）用 `.env.example` 先行作成
 
 ---
@@ -162,7 +164,6 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 - [ ] `[P2]` **Yomu-Kamo** — フルスタック（FE/BE/DB/CI/docs）の参照モデル。他 repo の雛形にできる
 - [ ] `[P2]` **pocket-museum** — ローカル first（Dexie）→ Supabase の段階設計は README で明確。子ページにも v0.1 / v0.3 フェーズを1行
 - [ ] `[P2]` **quant-ops** — GHA → JSON → README 自動更新パイプラインが成熟。他 data-driven repo のテンプレに
-- [ ] `[P2]` **claude-automation** — GHA 不可・launchd 前提。ポートフォリオに載せるなら「ローカル自動化」カテゴリ
 
 ---
 
@@ -181,7 +182,6 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 - [ ] `[P2]` **deai** — CI / lint / LICENSE なし。最小 `npm run build` CI が低コスト
 - [ ] `[P2]` **pocket-museum** — README は Vercel 手順詳細だが CI なし（`npm run lint` は package.json に存在）
 - [ ] `[P2]` **color-verse** — LICENSE「後日決定」。公開 repo なら早期決定
-- [ ] `[P2]` **bbf-kubernetes** — README が書籍1行のみ。章構成・前提（kind/minikube 等）・CI secrets 追記
 - [ ] `[P2]` **tabi-no-shiori** — CI 良好。デプロイ先・公開 URL の README 記載なし
 - [ ] `[P3]` **LICENSE 方針統一** — quant-ops / Yomu-Kamo は MIT。他 repo は未決 or 未記載が多い
 
