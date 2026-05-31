@@ -19,6 +19,24 @@ import {
 type FilterType = 'ALL' | ProjectCategory;
 
 const FILTERS: FilterType[] = ['ALL', 'Enjoy', 'Study', 'Create'];
+const FILTER_MAP = new Map(FILTERS.map((value) => [value.toLowerCase(), value] as const));
+
+function getFilterFromQuery(): FilterType {
+  const params = new URLSearchParams(location.search);
+  const raw = params.get('filter');
+
+  if (!raw) {
+    return 'ALL';
+  }
+
+  const normalized = FILTER_MAP.get(raw.toLowerCase()) ?? 'ALL';
+  if (raw !== normalized) {
+    params.set('filter', normalized);
+    history.replaceState(null, '', `${location.pathname}?${params.toString()}`);
+  }
+
+  return normalized;
+}
 
 function filterProjects(all: readonly Project[], filter: FilterType): Project[] {
   if (filter === 'ALL') {
@@ -133,9 +151,8 @@ function main(): void {
   }
 
   const shuffled = shuffleArray(rawProjects);
-  // URLクエリ ?filter=Study 等から初期値を決定
-  const initial = (new URLSearchParams(location.search).get('filter') as FilterType) || 'ALL';
-  let current: FilterType = initial;
+  // URLクエリを検証して初期値を決定（不正値はALLへ正規化）
+  let current: FilterType = getFilterFromQuery();
 
   setupFilters(filtersEl, (next) => {
     current = next;
