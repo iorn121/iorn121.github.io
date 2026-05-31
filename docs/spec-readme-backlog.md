@@ -12,7 +12,8 @@
   - リポジトリ概要・技術スタック・開発手順（簡潔）
   - 改善点バックログ（カテゴリ別・チェックリスト形式）
   - 関連ローカルリポジトリ一覧とポートフォリオ子ページ slug の対応表
-- **全関連プロジェクト**（AQUASYNC, Yomu-Kamo, color-verse, deai, pocket-museum, quant-ops, shinjuku-chronowalk, tabi-no-shiori, bbf-kubernetes, claude-automation, MyTemplates）の各 `README.md` にも同形式の「改善点バックログ」セクションを追加する。
+- **全関連プロジェクト**（AQUASYNC, Yomu-Kamo, color-verse, deai, pocket-museum, quant-ops, shinjuku-chronowalk, tabi-no-shiori, bbf-kubernetes, claude-automation）の各 `README.md` にも同形式の「改善点バックログ」セクションを追加する。
+- **MyTemplates** — 用途が薄いためリポジトリ削除予定（2026-05-31）。監査対象から除外。
 
 ### 非スコープ
 

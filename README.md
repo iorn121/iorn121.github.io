@@ -42,7 +42,6 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 | —                     | `rhythm-mile`         | 子ページあり・ローカル clone なし |
 | `bbf-kubernetes`      | —                     | 子ページ未作成                    |
 | `claude-automation`   | —                     | 子ページ未作成                    |
-| `MyTemplates`         | —                     | テンプレ用途（掲載要否は未決）    |
 
 ## 関連プロジェクトの改善点バックログ
 
@@ -60,11 +59,10 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 | tabi-no-shiori      | `../tabi-no-shiori/README.md`      | トップ UX、CLI スキャフォールド、LICENSE なし             |
 | bbf-kubernetes      | `../bbf-kubernetes/README.md`      | probe パス不一致、.gitignore/LICENSE なし                 |
 | claude-automation   | `../claude-automation/README.md`   | カレンダー重複、requirements pin、venv 手順               |
-| MyTemplates         | `../MyTemplates/README.md`         | React Island サンプルなし、Tailwind v4/README 不一致      |
 
 ### 横断テーマ（全プロジェクト共通）
 
-- **Dependabot**: Yomu-Kamo のみ整備。他 10 repo は未設定
+- **Dependabot**: Yomu-Kamo のみ整備。他 repo は PR #5 等で順次整備中
 - **LICENSE**: quant-ops / Yomu-Kamo（README のみ MIT）以外は未整備が多い
 - **CI**: deai / AQUASYNC / pocket-museum / claude-automation は未整備
 - **`.env.example`**: claude-automation のみ。Yomu-Kamo は docs 止まり
@@ -99,7 +97,6 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 - [ ] `[P1]` **Yomu-Kamo** — README が参照する `frontend/.env.local.example` が存在しない（`docs/ENVIRONMENT.md` のみ）
 - [ ] `[P2]` **deai** — `package.json` に lint/typecheck なし。ロードマップ進捗が README のみ
 - [ ] `[P2]` **color-verse** — README 末尾「100機能アイデア」が本体説明を埋もれさせる。別 doc 化検討
-- [ ] `[P3]` **MyTemplates** — フォルダ名 `MyTemplates` vs README タイトル `astro-prototype-template` の対応関係を明記
 
 ---
 
