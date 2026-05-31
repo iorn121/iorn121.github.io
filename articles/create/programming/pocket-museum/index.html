@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no" />
+    <site-head title="Pocket Museum"></site-head>
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <div id="app">
+      <div class="memox memox--page">
+        <header>
+          <h1 class="title">Pocket Museum</h1>
+        </header>
+
+        <section class="section-group">
+          <section>
+            <h3>概要</h3>
+            <p>
+              旅先で出会ったポストカードを、手のひらの中の小さな美術館に。美術館・博物館で買ったポストカードをスマホで取り込み、場所と思い出を添えてコレクション化する個人用
+              PWA です。「静かな美術館をポケットに」を北極星に、最小限の UI
+              と丁寧なマイクロインタラクションを目指しています。
+            </p>
+            <ul class="experience-list">
+              <li><strong>取り込み:</strong> 撮影から矩形検出・台形補正・色補正まで自動化</li>
+              <li><strong>思い出:</strong> 場所・日付・コメントを作品と一緒に保存</li>
+              <li><strong>鑑賞:</strong> フォルダではなくギャラリーとして眺める体験</li>
+            </ul>
+            <p>
+              Vite + React + TypeScript、Tailwind CSS、Framer
+              Motion、Dexie（IndexedDB）、Zustand、React
+              Router、vite-plugin-pwa。クラウドバックアップは Supabase を予定しています。
+            </p>
+          </section>
+
+          <section>
+            <h3>リンク</h3>
+            <a
+              class="explicit-link"
+              href="https://github.com/iorn121/pocket-museum"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="explicit-link__title">iorn121/pocket-museum</span>
+              <span class="explicit-link__url">https://github.com/iorn121/pocket-museum</span>
+            </a>
+          </section>
+        </section>
+
+        <ul class="article-list">
+          <!-- kurage:child-links -->
+        </ul>
+      </div>
+    </div>
+
+    <script type="module" src="/site.js"></script>
+    <site-footer></site-footer>
+  </body>
+</html>
