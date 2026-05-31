@@ -80,7 +80,21 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 
 ### 短期（hygiene PR merge）
 
-- **まず [PR #5](https://github.com/iorn121/iorn121.github.io/pull/5) をマージ** — Dependabot 有効化、CI で `npm run lint`、フィルタ URL バリデーション、`ShigotoMemogaki` フォント、`html lang` 統一などバックログ P1/P2 の土台
+- **まず [PR #5](https://github.com/iorn121/iorn121.github.io/pull/5) をマージ** — Dependabot、CI lint、フィルタ URL 正規化、フォント、`lang=ja` 等
+- **続けて各プロジェクトの hygiene PR をマージ**（各 repo README「今後の対応策」参照）
+
+| リポジトリ          | PR                                                          | 主な内容                                                     |
+| ------------------- | ----------------------------------------------------------- | ------------------------------------------------------------ |
+| AQUASYNC            | [#1](https://github.com/iorn121/AQUASYNC/pull/1)            | LICENSE、Flutter CI、Dependabot、セットアップ/実装ステータス |
+| deai                | [#1](https://github.com/iorn121/deai/pull/1)                | LICENSE、CI、Dependabot、ESLint、Node 20                     |
+| Yomu-Kamo           | [#118](https://github.com/iorn121/Yomu-Kamo/pull/118)       | LICENSE、CHANGELOG、`.env.local.example`、README 修正        |
+| color-verse         | [#29](https://github.com/iorn121/color-verse/pull/29)       | LICENSE、Dependabot、CI 強化                                 |
+| tabi-no-shiori      | [#11](https://github.com/iorn121/tabi-no-shiori/pull/11)    | LICENSE、Dependabot、`typecheck` + CI                        |
+| pocket-museum       | [#3](https://github.com/iorn121/pocket-museum/pull/3)       | LICENSE、CI、Dependabot、ESLint                              |
+| quant-ops           | [#3](https://github.com/iorn121/quant-ops/pull/3)           | PR CI、Dependabot、README（universe.json）                   |
+| shinjuku-chronowalk | [#4](https://github.com/iorn121/shinjuku-chronowalk/pull/4) | README/docs、LICENSE、Dependabot、PR build（base: `dev`）    |
+
+- **rhythm-mile** — ローカル clone 後、他 slug と同様に hygiene PR を作成
 
 ### 中期（P1 機能）
 
