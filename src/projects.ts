@@ -12,51 +12,51 @@ export const projects: Project[] = [
   {
     title: 'ランニング',
     category: 'Enjoy',
-    image: './images/thumb_placeholder.svg',
+    image: './images/thumbs/running.svg',
     url: './articles/enjoy/running/',
   },
 
   {
     title: 'Bio',
     category: 'Enjoy',
-    image: './images/thumb_placeholder.svg',
+    image: './images/thumbs/biography.svg',
     url: './articles/enjoy/biography/',
   },
   {
     title: '色彩',
     category: 'Study',
-    image: './images/thumb_placeholder.svg',
+    image: './images/thumbs/color.svg',
     url: './articles/study/color/',
   },
 
   {
     title: 'note',
     category: 'Create',
-    image: './images/thumb_placeholder.svg',
+    image: './images/thumbs/note.svg',
     url: './articles/create/note/',
   },
   {
     title: 'クラゲ',
     category: 'Enjoy',
-    image: './images/thumb_placeholder.svg',
+    image: './images/thumbs/jellyfish.svg',
     url: './articles/enjoy/jellyfish/',
   },
   {
     title: '旅行',
     category: 'Enjoy',
-    image: './images/thumb_placeholder.svg',
+    image: './images/thumbs/travel.svg',
     url: './articles/enjoy/travel/',
   },
   {
     title: 'プログラミング',
     category: 'Create',
-    image: './images/thumb_placeholder.svg',
+    image: './images/thumbs/programming.svg',
     url: './articles/create/programming/',
   },
   {
     title: 'YouTube',
     category: 'Create',
-    image: './images/thumb_placeholder.svg',
+    image: './images/thumbs/youtube.svg',
     url: './articles/create/youtube/',
   },
 ];

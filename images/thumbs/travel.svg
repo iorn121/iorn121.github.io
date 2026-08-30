@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Travel">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe8f7"/>
+      <stop offset="1" stop-color="#f6f1e7"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky2)"/>
+  <ellipse cx="180" cy="120" rx="55" ry="28" fill="#fff" opacity="0.85"/>
+  <ellipse cx="220" cy="120" rx="35" ry="20" fill="#fff" opacity="0.85"/>
+  <ellipse cx="600" cy="100" rx="60" ry="26" fill="#fff" opacity="0.75"/>
+  <!-- simplified Japan-ish archipelago silhouette -->
+  <path d="M430 120 C470 140 500 190 490 240 C480 290 450 330 420 360 C390 390 360 410 340 430 C360 390 390 350 400 300 C410 250 400 190 430 120 Z" fill="#7cbc6e"/>
+  <path d="M500 250 C540 270 560 310 550 350 C540 380 510 400 480 410 C500 370 510 320 500 250 Z" fill="#8ecf7d"/>
+  <path d="M360 390 C390 410 410 450 400 470 C370 460 350 430 360 390 Z" fill="#6aaa5d"/>
+  <circle cx="420" cy="280" r="10" fill="#c74444"/>
+  <circle cx="420" cy="280" r="18" fill="none" stroke="#c74444" stroke-width="4" opacity="0.55"/>
+  <path d="M200 420 L280 300 L320 420 Z" fill="#5c7cfa" opacity="0.9"/>
+  <rect x="235" y="250" width="30" height="55" fill="#34495e"/>
+</svg>

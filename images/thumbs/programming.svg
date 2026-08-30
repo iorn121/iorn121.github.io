@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Programming">
+  <rect width="800" height="500" fill="#1e2a32"/>
+  <rect x="140" y="90" width="520" height="300" rx="16" fill="#27353f" stroke="#3d5160" stroke-width="4"/>
+  <rect x="160" y="110" width="480" height="240" rx="8" fill="#121a20"/>
+  <text x="190" y="160" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28" fill="#27ae60">&lt;/&gt;</text>
+  <text x="190" y="210" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" fill="#8ecdf0">const ideas = [];</text>
+  <text x="190" y="250" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" fill="#b8e994">ideas.push("build");</text>
+  <text x="190" y="290" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" fill="#ffd166">return ship();</text>
+  <rect x="300" y="400" width="200" height="18" rx="4" fill="#3d5160"/>
+  <rect x="260" y="418" width="280" height="28" rx="6" fill="#2c3a44"/>
+</svg>
