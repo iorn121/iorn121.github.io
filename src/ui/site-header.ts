@@ -1,12 +1,14 @@
 export class SiteHeader extends HTMLElement {
   connectedCallback(): void {
     this.render();
+    document.getElementById('app')?.setAttribute('tabindex', '-1');
   }
 
   private render(): void {
     const currentPath = location.pathname.replace(/\/+$/, '');
     const isHome = currentPath === '' || currentPath.endsWith('/index.html');
     const parts: string[] = [];
+    parts.push('<a class="skip-link" href="#app">メインコンテンツへ</a>');
     parts.push('<header>');
     parts.push(`  <h1 class="title"><a href="/" style="color: inherit;">Iori Portfolio</a></h1>`);
     if (isHome) {
