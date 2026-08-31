@@ -1,0 +1,167 @@
+# PR Preview — build dist and publish to surge.sh
+# Requires repository secrets: SURGE_LOGIN, SURGE_TOKEN
+# See docs/spec-pr-preview-surge.md
+
+name: PR Preview (Surge)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  PREVIEW_DOMAIN: iorn121-github-io-pr-${{ github.event.pull_request.number }}.surge.sh
+
+jobs:
+  deploy-preview:
+    name: Deploy preview
+    if: >
+      github.event.action != 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Check Surge secrets
+        env:
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: |
+          if [ -z "$SURGE_LOGIN" ] || [ -z "$SURGE_TOKEN" ]; then
+            echo "::error::SURGE_LOGIN / SURGE_TOKEN が未設定です。リポジトリの Actions Secrets に追加してください（docs/spec-pr-preview-surge.md）。"
+            exit 1
+          fi
+
+      - name: Deploy to Surge
+        id: surge
+        env:
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: |
+          npx --yes surge ./dist "$PREVIEW_DOMAIN" --token "$SURGE_TOKEN"
+          echo "url=https://${PREVIEW_DOMAIN}" >> "$GITHUB_OUTPUT"
+
+      - name: Comment preview URL on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = '<!-- pr-preview-surge -->';
+            const url = '${{ steps.surge.outputs.url }}';
+            const body = [
+              marker,
+              '## 🔍 PR Preview',
+              '',
+              `プレビュー: ${url}`,
+              '',
+              `_PR #${context.payload.pull_request.number} / commit \`${context.sha.slice(0, 7)}\`_`,
+              '',
+              '本番（GitHub Pages）とは別ホストです。Close / Merge 時に teardown されます。',
+            ].join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              per_page: 100,
+            });
+            const existing = comments.find((c) => c.user?.type === 'Bot' && c.body?.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+  teardown-preview:
+    name: Teardown preview
+    if: >
+      github.event.action == 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Surge secrets
+        id: secrets
+        env:
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: |
+          if [ -z "$SURGE_LOGIN" ] || [ -z "$SURGE_TOKEN" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Secrets missing; skip teardown."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Teardown Surge site
+        if: steps.secrets.outputs.skip != 'true'
+        env:
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: |
+          npx --yes surge teardown "$PREVIEW_DOMAIN" --token "$SURGE_TOKEN" || true
+
+      - name: Comment teardown on PR
+        if: steps.secrets.outputs.skip != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = '<!-- pr-preview-surge -->';
+            const domain = process.env.PREVIEW_DOMAIN;
+            const body = [
+              marker,
+              '## 🔍 PR Preview',
+              '',
+              `プレビュー（\`${domain}\`）は teardown しました。`,
+              '',
+              `_PR #${context.payload.pull_request.number} closed_`,
+            ].join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              per_page: 100,
+            });
+            const existing = comments.find((c) => c.user?.type === 'Bot' && c.body?.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            }
