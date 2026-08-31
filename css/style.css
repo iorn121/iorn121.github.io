@@ -35,6 +35,14 @@ Theme Name: photo-gallery
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'ShigotoMemogaki';
+  src: url('../font/ShigotoMemogaki.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
 html,
 body {
   margin: 0;
