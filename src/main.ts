@@ -19,6 +19,7 @@ import {
 type FilterType = 'ALL' | ProjectCategory;
 
 const FILTERS: FilterType[] = ['ALL', 'Enjoy', 'Study', 'Create'];
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const FILTER_MAP = new Map(FILTERS.map((value) => [value.toLowerCase(), value] as const));
 
 function getFilterFromQuery(): FilterType {
@@ -51,9 +52,9 @@ function createProjectCard(project: Project): HTMLElement {
   root.className = 'project polaroid';
   // カテゴリ別の配色クラスを付与（cat-Enjoy / cat-Study / cat-Create / cat-Others）
   root.classList.add(`cat-${project.category}`);
-  // 個体差のある傾きを与える（-2.5〜2.5deg）
-  const tilt = (Math.random() * 5 - 2.5).toFixed(2);
-  root.style.setProperty('--polaroid-tilt', `${tilt}deg`);
+  // 個体差のある傾きを与える（-2.5〜2.5deg）。reduced-motion 時は 0
+  const tilt = prefersReducedMotion.matches ? '0deg' : `${(Math.random() * 5 - 2.5).toFixed(2)}deg`;
+  root.style.setProperty('--polaroid-tilt', tilt);
   root.href = project.url;
   root.rel = 'noopener noreferrer';
 
