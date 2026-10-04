@@ -1,0 +1,15 @@
+{
+  "name": "iorn121.github.io",
+  "automation": "unattended",
+  "model": "composer-2.5",
+  "specDir": "docs/specs",
+  "stack": "node",
+  "testing": { "profile": "library" },
+  "commands": {
+    "install": "npm ci",
+    "verify": ["npm run lint", "npm run build"]
+  },
+  "release": { "base": "main", "mode": "pull-request" },
+  "gates": { "afterSpecify": false, "beforeRelease": false },
+  "limits": { "verifyRetries": 2, "timeoutMs": 1800000 }
+}
