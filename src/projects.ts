@@ -59,6 +59,19 @@ export const projects: Project[] = [
     image: './images/thumbs/youtube.svg',
     url: './articles/create/youtube/',
   },
+  {
+    title: '手塚治虫漫画全集',
+    category: 'Enjoy',
+    image: './images/thumbs/tezuka-zenshu.svg',
+    url: './articles/enjoy/tezuka-zenshu/',
+  },
+
+  {
+    title: '作りたい料理',
+    category: 'Enjoy',
+    image: './images/thumbs/cooking.svg',
+    url: './articles/enjoy/cooking/',
+  },
 ];
 
 export function shuffleArray<T>(input: readonly T[]): T[] {
