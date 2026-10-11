@@ -40,16 +40,18 @@
 
 | slug            | タイトル         | カード画像                          |
 | --------------- | ---------------- | ----------------------------------- |
-| `tezuka-zenshu` | 手塚治虫漫画全集 | `./images/thumbs/tezuka-zenshu.svg` |
+| `tezuka-zenshu` | 手塚治虫文庫全集 | `./images/thumbs/tezuka-zenshu.svg` |
 | `cooking`       | 作りたい料理     | `./images/thumbs/cooking.svg`       |
 
-2. 手塚ページは巻単位のチェックリスト。
-   - 対象は講談社『手塚治虫漫画全集』MT001–MT400（エッセイ等の別巻18冊を含む完結400巻）
-   - 1巻1項目。ラベルは `001 ジャングル大帝（1）` の形
-   - 第1期（001–100）から第4期（301–400）まで `<details>` で分ける
+2. 手塚ページは講談社の作品一覧を元にしたチェックリスト。
+   - 対象は [手塚治虫文庫全集作品一覧（古い順）](https://www.kodansha.co.jp/comic/labels/tezuka?sort=old) の並び。全200点
+   - 1点1項目。ラベルは一覧の書名のまま（例: `001 鉄腕アトム（１）`）
+   - 50点ずつ `<details>` で分ける（001–050 から 151–200）
+   - 各項目にオリジナルのサムネイル SVG（`images/tezuka/001.svg` から `200.svg`）。講談社の書影は使わない
    - 初期状態はすべて未チェック
    - チェックの正は HTML の `checked`。公開ページに進捗が出るよう、入力は `disabled`（ブラウザだけの一時チェックは保存しない）
-   - 進捗（`0 / 400`）は各期の見出しとページ冒頭に、チェック数と一致するよう書く
+   - 進捗（`0 / 200`）は各グループの見出しとページ冒頭に、チェック数と一致するよう書く
+   - ページ見出しとトップカードのタイトルは「手塚治虫文庫全集」
 
 3. 料理ページは同じチェックリストの体裁。
    - 料理名の指定が無いため、初期リストは空
@@ -77,7 +79,8 @@
 - `articles/enjoy/cooking/index.html`（新規）
 - `articles/enjoy/index.html`、`articles/study/index.html`、`articles/create/index.html`（骨格と子リンク）
 - `src/projects.ts`（`kurage` が末尾追記。画像パスはサムネイルに合わせる）
-- `images/thumbs/tezuka-zenshu.svg`、`images/thumbs/cooking.svg`（新規）
+- `images/thumbs/tezuka-zenshu.svg`、`images/thumbs/cooking.svg`（カード用）
+- `images/tezuka/001.svg`–`200.svg`（チェックリスト用。書影の複製ではない）
 - `css/style.css`（`.checklist`）
 
 ## 検証

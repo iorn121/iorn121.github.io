@@ -60,7 +60,7 @@ export const projects: Project[] = [
     url: './articles/create/youtube/',
   },
   {
-    title: '手塚治虫漫画全集',
+    title: '手塚治虫文庫全集',
     category: 'Enjoy',
     image: './images/thumbs/tezuka-zenshu.svg',
     url: './articles/enjoy/tezuka-zenshu/',

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="220" viewBox="0 0 160 220" role="img" aria-label="ミッドナイト（３）">
+  <rect width="160" height="220" fill="#efe7d7"/>
+  <rect width="16" height="220" fill="#c4554a"/>
+  <rect x="66" y="52" width="52" height="52" rx="6" fill="#c4554a"/>
+  <text x="88" y="142" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#2b2b2b">053</text>
+  <text x="88" y="176" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#2b2b2b">ミッドナイト</text>
+</svg>

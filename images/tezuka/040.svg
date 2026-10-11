@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="220" viewBox="0 0 160 220" role="img" aria-label="きりひと讃歌（２）">
+  <rect width="160" height="220" fill="#f6f1e7"/>
+  <rect width="16" height="220" fill="#6b4c7a"/>
+  <polygon points="92,48 122,96 62,96" fill="#6b4c7a"/>
+  <text x="88" y="142" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#2b2b2b">040</text>
+  <text x="88" y="176" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#2b2b2b">きりひと讃歌</text>
+</svg>
