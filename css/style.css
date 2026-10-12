@@ -372,7 +372,8 @@ ul li {
 
 /* ページ本文（memox--page）だけ Zen Kurenaido */
 .memox--page p,
-.memox--page li {
+.memox--page li,
+.memox--page summary {
   font-family: 'Zen Kurenaido', 'ShigotoMemogaki', system-ui, sans-serif;
 }
 
@@ -657,4 +658,65 @@ site-footer footer {
   .polaroid:hover {
     transform: none;
   }
+}
+
+.checklist-progress {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.checklist-period {
+  margin: 14px 0 18px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.18);
+  padding-top: 12px;
+}
+
+.checklist-period summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.checklist {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.checklist li + li {
+  border-top: 1px dashed rgba(0, 0, 0, 0.12);
+}
+
+.checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 2px;
+}
+
+.checklist input {
+  margin-top: 0.45em;
+  accent-color: #2b2b2b;
+}
+
+.checklist input:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.checklist-thumb {
+  flex: none;
+  width: 36px;
+  height: 50px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+.checklist input:checked ~ span,
+.checklist input:checked ~ .checklist-thumb {
+  text-decoration: line-through;
+  opacity: 0.55;
 }

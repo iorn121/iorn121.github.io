@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="手塚治虫文庫全集">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6efe4"/>
+      <stop offset="1" stop-color="#e7d7c3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <rect x="250" y="150" width="250" height="190" rx="6" fill="#f4f0e6" stroke="#2b2b2b" stroke-width="8"/>
+  <path d="M250 170 H500" stroke="#c4554a" stroke-width="16"/>
+  <path d="M280 210 H470" stroke="#2b2b2b" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+  <path d="M280 236 H450" stroke="#2b2b2b" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+  <path d="M280 262 H430" stroke="#2b2b2b" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+  <rect x="470" y="120" width="36" height="250" rx="4" fill="#2f80ed" transform="rotate(8 488 245)"/>
+  <rect x="210" y="128" width="36" height="250" rx="4" fill="#e07a3d" transform="rotate(-10 228 253)"/>
+  <rect x="300" y="340" width="220" height="28" rx="4" fill="#2b2b2b"/>
+</svg>
