@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no" />
+    <site-head title="quant-ops"></site-head>
+    <link rel="stylesheet" href="../../../../css/style.css" />
+  </head>
+  <body>
+    <site-header></site-header>
+
+    <div id="app">
+      <div class="memox memox--page">
+        <header>
+          <h1 class="title">quant-ops</h1>
+        </header>
+
+        <section class="section-group">
+          <section>
+            <h3>概要</h3>
+            <p>
+              長期投資向けの日本株自動スクリーニングシステムです。GitHub Actions
+              で毎営業日に銘柄をスクリーニングし、ROE・PER・PBR などから算出したスコアランキングを
+              <code>data/rankings.json</code> に蓄積します。
+            </p>
+            <p>
+              スコア算式は <code>Score = (ROE × 3) + (10 / PBR) + (50 / PER)</code>（min-max 正規化
+              0〜100 点）を想定した軽量パイプラインです。
+            </p>
+          </section>
+
+          <section>
+            <h3>リンク</h3>
+            <a
+              class="explicit-link"
+              href="https://github.com/iorn121/quant-ops"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="explicit-link__title">iorn121/quant-ops</span>
+              <span class="explicit-link__url">https://github.com/iorn121/quant-ops</span>
+            </a>
+          </section>
+        </section>
+
+        <ul class="article-list">
+          <!-- kurage:child-links -->
+        </ul>
+      </div>
+    </div>
+
+    <script type="module" src="/site.js"></script>
+    <site-footer></site-footer>
+  </body>
+</html>

@@ -74,33 +74,33 @@ export const projects: Project[] = [
   },
   {
     title: '読書',
-    category: 'Create',
+    category: 'Enjoy',
     image: './images/thumbs/yomu-kamo.svg',
-    url: './articles/create/programming/yomu-kamo/',
+    url: './articles/enjoy/reading/',
   },
   {
     title: '謎解き',
-    category: 'Create',
+    category: 'Enjoy',
     image: './images/thumbs/shinjuku-chronowalk.svg',
-    url: './articles/create/programming/shinjuku-chronowalk/',
+    url: './articles/enjoy/mystery/',
   },
   {
     title: '美術館',
-    category: 'Create',
+    category: 'Enjoy',
     image: './images/thumbs/pocket-museum.svg',
-    url: './articles/create/programming/pocket-museum/',
+    url: './articles/enjoy/museum/',
   },
   {
     title: '投資',
-    category: 'Create',
+    category: 'Enjoy',
     image: './images/thumbs/quant-ops.svg',
-    url: './articles/create/programming/quant-ops/',
+    url: './articles/enjoy/investing/',
   },
   {
     title: 'AI',
-    category: 'Create',
+    category: 'Enjoy',
     image: './images/thumbs/claude-automation.svg',
-    url: './articles/create/programming/claude-automation/',
+    url: './articles/enjoy/ai/',
   },
 ];
 

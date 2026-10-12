@@ -1,57 +1,42 @@
-# 仕様: プログラミングの各プロジェクトをテーマのページへ移す
+# 仕様: テーマのページの下に、アプリ記事をぶら下げる
 
 ## 背景
 
-各プロジェクトは `articles/create/programming/<slug>/` にある。トップの他カードは、リポジトリ名ではなく取り組んでいるテーマが名前になっている。
+トップのカードはテーマ（美術館、読書など）でまとめる。アプリの記事は、そのテーマの子ページであり、プログラミングの一覧からも辿れる。
 
 ## スコープ
 
-### トップのカードにする（Create）
+### テーマページ（トップカード）
 
-URL は子ページのまま。カード名、`<h1>`、`<site-head>` の title、プログラミングページの子リンクをテーマ名に揃える。slug と本文のリポジトリ名は残す。カード画像は `images/thumbs/<slug>.svg`（800×500）。
+カードはテーマ名のまま。リンク先はテーマページ。カテゴリは Enjoy（色彩は既存の Study）。
 
-| slug                  | テーマ名 |
-| --------------------- | -------- |
-| `yomu-kamo`           | 読書     |
-| `shinjuku-chronowalk` | 謎解き   |
-| `pocket-museum`       | 美術館   |
-| `quant-ops`           | 投資     |
-| `claude-automation`   | AI       |
+| テーマ | パス                       | アプリ記事                 |
+| ------ | -------------------------- | -------------------------- |
+| 読書   | `enjoy/reading/`           | よむかも（Yomu-Kamo）      |
+| 謎解き | `enjoy/mystery/`           | Shinjuku Chronowalk        |
+| 美術館 | `enjoy/museum/`            | Pocket Museum              |
+| 投資   | `enjoy/investing/`         | quant-ops                  |
+| AI     | `enjoy/ai/`                | claude-automation          |
+| 旅行   | `enjoy/travel/`（既存）    | 旅のしおり                 |
+| クラゲ | `enjoy/jellyfish/`（既存） | AQUASYNC                   |
+| 色彩   | `study/color/`（既存）     | ColorVerse（カラーバース） |
 
-「プログラミング」カードは残し、言語一覧と上の5件への入口にする。
+アプリ本文は各アプリ記事に置く。テーマページは短い導入と子リンクだけ。旅行の経県値、クラゲの好きな種類と習慣化アプリはテーマページに残す。
 
-### 既存ページへ移して、子ページは消す
+### プログラミング
 
-- `tabi-no-shiori` の概要と GitHub リンクを `articles/enjoy/travel/index.html` の一節にする
-- `aquasync` の概要と GitHub リンクを `articles/enjoy/jellyfish/index.html` の一節にする。既存の「習慣化アプリ」節は残す
-- `color-verse` は `articles/study/color/index.html` にデモがある。GitHub リンクだけ色彩ページへ足し、子ページは消す。新しいカードは作らない
+`articles/create/programming/index.html` からも、上の8アプリへリンクする。ファイルの実体はテーマ配下に置く。
 
-### 削除する
+### 削除のまま
 
 - `deai`
 - `rhythm-mile`
 
-ディレクトリと、プログラミングページからのリンクを消す。
-
 ### 非スコープ
 
-- 残す子ページの slug 変更と、本文の技術説明の書き換え
-- Create カテゴリ一覧への5件追加
-- README の改善点バックログ本文。対応表（子ページの所在）だけ現状に合わせる
+- アプリ本文の技術説明の書き換え
+- README の改善点バックログ本文。対応表だけ現状に合わせる
 - 新規 npm 依存
-- 手塚・料理のブランチ（`feat/life-checklists`）への混在
-
-## 影響ファイル
-
-- `src/projects.ts`
-- `articles/create/programming/index.html`
-- `articles/create/programming/{yomu-kamo,shinjuku-chronowalk,pocket-museum,quant-ops,claude-automation}/index.html`
-- `articles/enjoy/travel/index.html`
-- `articles/enjoy/jellyfish/index.html`
-- `articles/study/color/index.html`
-- `images/thumbs/{yomu-kamo,shinjuku-chronowalk,pocket-museum,quant-ops,claude-automation}.svg`
-- 削除: `aquasync` / `tabi-no-shiori` / `color-verse` / `deai` / `rhythm-mile`
-- `README.md` の対応表
 
 ## 検証
 
@@ -60,4 +45,4 @@ npm run lint
 npm run build
 ```
 
-トップに読書・謎解き・美術館・投資・AI が出ること。旅行に旅のしおり、クラゲに AQUASYNC、色彩に ColorVerse のリンクがあること。Deai と Rhythm Mile の URL が無いこと。
+トップの美術館から Pocket Museum へ進めること。プログラミングの一覧からも同じ Pocket Museum へ進めること。他の7件も同様。Deai と Rhythm Mile の URL が無いこと。

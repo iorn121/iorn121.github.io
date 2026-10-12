@@ -29,17 +29,17 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 
 ## 関連ローカルリポジトリ ↔ ポートフォリオ子ページ
 
-| ローカル repo         | 子ページ slug         | 備考                          |
-| --------------------- | --------------------- | ----------------------------- |
-| `AQUASYNC`            | —                     | クラゲのページへ移動          |
-| `Yomu-Kamo`           | `yomu-kamo`           | トップのカード名は「読書」    |
-| `color-verse`         | —                     | 色彩のページ（デモと GitHub） |
-| `deai`                | —                     | ページは一旦削除              |
-| `pocket-museum`       | `pocket-museum`       | トップのカード名は「美術館」  |
-| `quant-ops`           | `quant-ops`           | トップのカード名は「投資」    |
-| `shinjuku-chronowalk` | `shinjuku-chronowalk` | トップのカード名は「謎解き」  |
-| `tabi-no-shiori`      | —                     | 旅行のページへ移動            |
-| `claude-automation`   | `claude-automation`   | トップのカード名は「AI」      |
+| ローカル repo         | 置き場所                            | 備考                                         |
+| --------------------- | ----------------------------------- | -------------------------------------------- |
+| `AQUASYNC`            | `enjoy/jellyfish/aquasync`          | クラゲの子ページ。プログラミングからもリンク |
+| `Yomu-Kamo`           | `enjoy/reading/yomu-kamo`           | テーマは読書                                 |
+| `color-verse`         | `study/color/color-verse`           | テーマは色彩                                 |
+| `deai`                | —                                   | ページは一旦削除                             |
+| `pocket-museum`       | `enjoy/museum/pocket-museum`        | テーマは美術館                               |
+| `quant-ops`           | `enjoy/investing/quant-ops`         | テーマは投資                                 |
+| `shinjuku-chronowalk` | `enjoy/mystery/shinjuku-chronowalk` | テーマは謎解き                               |
+| `tabi-no-shiori`      | `enjoy/travel/tabi-no-shiori`       | テーマは旅行                                 |
+| `claude-automation`   | `enjoy/ai/claude-automation`        | テーマは AI                                  |
 
 ### 監査対象外（アーカイブ済み）
 
