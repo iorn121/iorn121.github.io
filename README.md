@@ -29,25 +29,24 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 
 ## 関連ローカルリポジトリ ↔ ポートフォリオ子ページ
 
-| ローカル repo         | 子ページ slug         | 備考                                                                                  |
-| --------------------- | --------------------- | ------------------------------------------------------------------------------------- |
-| `AQUASYNC`            | `aquasync`            | ✓                                                                                     |
-| `Yomu-Kamo`           | `yomu-kamo`           | ✓                                                                                     |
-| `color-verse`         | `color-verse`         | ✓（デモ URL あり）                                                                    |
-| `deai`                | `deai`                | ✓                                                                                     |
-| `pocket-museum`       | `pocket-museum`       | ✓                                                                                     |
-| `quant-ops`           | `quant-ops`           | ✓                                                                                     |
-| `shinjuku-chronowalk` | `shinjuku-chronowalk` | ✓                                                                                     |
-| `tabi-no-shiori`      | `tabi-no-shiori`      | ✓                                                                                     |
-| —                     | `rhythm-mile`         | 子ページあり・[PR #1](https://github.com/iorn121/rhythm-mile/pull/1) hygiene 作成済み |
+| ローカル repo         | 子ページ slug         | 備考                          |
+| --------------------- | --------------------- | ----------------------------- |
+| `AQUASYNC`            | —                     | クラゲのページへ移動          |
+| `Yomu-Kamo`           | `yomu-kamo`           | トップのカード名は「読書」    |
+| `color-verse`         | —                     | 色彩のページ（デモと GitHub） |
+| `deai`                | —                     | ページは一旦削除              |
+| `pocket-museum`       | `pocket-museum`       | トップのカード名は「美術館」  |
+| `quant-ops`           | `quant-ops`           | トップのカード名は「投資」    |
+| `shinjuku-chronowalk` | `shinjuku-chronowalk` | トップのカード名は「謎解き」  |
+| `tabi-no-shiori`      | —                     | 旅行のページへ移動            |
+| `claude-automation`   | `claude-automation`   | トップのカード名は「AI」      |
 
 ### 監査対象外（アーカイブ済み）
 
-| リポジトリ          | 理由                                                               |
-| ------------------- | ------------------------------------------------------------------ |
-| `MyTemplates`       | Astro テンプレ用途のみ。2026-05-31 アーカイブ                      |
-| `bbf-kubernetes`    | 書籍ハンズオン用 fork。2026-05-31 アーカイブ                       |
-| `claude-automation` | ローカル自動化（launchd）。ポートフォリオ非掲載・README 監査対象外 |
+| リポジトリ       | 理由                                          |
+| ---------------- | --------------------------------------------- |
+| `MyTemplates`    | Astro テンプレ用途のみ。2026-05-31 アーカイブ |
+| `bbf-kubernetes` | 書籍ハンズオン用 fork。2026-05-31 アーカイブ  |
 
 ## 関連プロジェクトの改善点バックログ
 

@@ -72,6 +72,36 @@ export const projects: Project[] = [
     image: './images/thumbs/cooking.svg',
     url: './articles/enjoy/cooking/',
   },
+  {
+    title: '読書',
+    category: 'Create',
+    image: './images/thumbs/yomu-kamo.svg',
+    url: './articles/create/programming/yomu-kamo/',
+  },
+  {
+    title: '謎解き',
+    category: 'Create',
+    image: './images/thumbs/shinjuku-chronowalk.svg',
+    url: './articles/create/programming/shinjuku-chronowalk/',
+  },
+  {
+    title: '美術館',
+    category: 'Create',
+    image: './images/thumbs/pocket-museum.svg',
+    url: './articles/create/programming/pocket-museum/',
+  },
+  {
+    title: '投資',
+    category: 'Create',
+    image: './images/thumbs/quant-ops.svg',
+    url: './articles/create/programming/quant-ops/',
+  },
+  {
+    title: 'AI',
+    category: 'Create',
+    image: './images/thumbs/claude-automation.svg',
+    url: './articles/create/programming/claude-automation/',
+  },
 ];
 
 export function shuffleArray<T>(input: readonly T[]): T[] {
