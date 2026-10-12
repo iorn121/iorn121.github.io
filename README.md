@@ -29,25 +29,24 @@ npm run new-page   # 記事ページ作成（kurage CLI）
 
 ## 関連ローカルリポジトリ ↔ ポートフォリオ子ページ
 
-| ローカル repo         | 子ページ slug         | 備考                                                                                  |
-| --------------------- | --------------------- | ------------------------------------------------------------------------------------- |
-| `AQUASYNC`            | `aquasync`            | ✓                                                                                     |
-| `Yomu-Kamo`           | `yomu-kamo`           | ✓                                                                                     |
-| `color-verse`         | `color-verse`         | ✓（デモ URL あり）                                                                    |
-| `deai`                | `deai`                | ✓                                                                                     |
-| `pocket-museum`       | `pocket-museum`       | ✓                                                                                     |
-| `quant-ops`           | `quant-ops`           | ✓                                                                                     |
-| `shinjuku-chronowalk` | `shinjuku-chronowalk` | ✓                                                                                     |
-| `tabi-no-shiori`      | `tabi-no-shiori`      | ✓                                                                                     |
-| —                     | `rhythm-mile`         | 子ページあり・[PR #1](https://github.com/iorn121/rhythm-mile/pull/1) hygiene 作成済み |
+| ローカル repo         | 置き場所                            | 備考                                         |
+| --------------------- | ----------------------------------- | -------------------------------------------- |
+| `AQUASYNC`            | `enjoy/jellyfish/aquasync`          | クラゲの子ページ。プログラミングからもリンク |
+| `Yomu-Kamo`           | `enjoy/reading/yomu-kamo`           | テーマは読書                                 |
+| `color-verse`         | `study/color/color-verse`           | テーマは色彩                                 |
+| `deai`                | —                                   | ページは一旦削除                             |
+| `pocket-museum`       | `enjoy/museum/pocket-museum`        | テーマは美術館                               |
+| `quant-ops`           | `enjoy/investing/quant-ops`         | テーマは投資                                 |
+| `shinjuku-chronowalk` | `enjoy/mystery/shinjuku-chronowalk` | テーマは謎解き                               |
+| `tabi-no-shiori`      | `enjoy/travel/tabi-no-shiori`       | テーマは旅行                                 |
+| `claude-automation`   | `enjoy/ai/claude-automation`        | テーマは AI                                  |
 
 ### 監査対象外（アーカイブ済み）
 
-| リポジトリ          | 理由                                                               |
-| ------------------- | ------------------------------------------------------------------ |
-| `MyTemplates`       | Astro テンプレ用途のみ。2026-05-31 アーカイブ                      |
-| `bbf-kubernetes`    | 書籍ハンズオン用 fork。2026-05-31 アーカイブ                       |
-| `claude-automation` | ローカル自動化（launchd）。ポートフォリオ非掲載・README 監査対象外 |
+| リポジトリ       | 理由                                          |
+| ---------------- | --------------------------------------------- |
+| `MyTemplates`    | Astro テンプレ用途のみ。2026-05-31 アーカイブ |
+| `bbf-kubernetes` | 書籍ハンズオン用 fork。2026-05-31 アーカイブ  |
 
 ## 関連プロジェクトの改善点バックログ
 
