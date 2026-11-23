@@ -39,14 +39,7 @@ function getFilterFromQuery(): FilterType {
   return normalized;
 }
 
-function filterProjects(all: readonly Project[], filter: FilterType): Project[] {
-  if (filter === 'ALL') {
-    return [...all];
-  }
-  return all.filter((p) => p.category === filter);
-}
-
-function createProjectCard(project: Project): HTMLElement {
+function createProjectCard(project: Project, index: number): HTMLElement {
   const root = document.createElement('a');
   // B案: ポラロイド風カード
   root.className = 'project polaroid';
@@ -71,6 +64,8 @@ function createProjectCard(project: Project): HTMLElement {
   img.className = 'project-image';
   img.src = project.image;
   img.alt = project.title;
+  img.decoding = 'async';
+  if (index >= 4) img.loading = 'lazy';
   imageWrapper.appendChild(img);
   frame.appendChild(imageWrapper);
 
@@ -90,12 +85,18 @@ function createProjectCard(project: Project): HTMLElement {
 }
 
 function renderProjects(container: HTMLElement, data: readonly Project[]): void {
-  container.innerHTML = '';
+  container.replaceChildren();
   const frag = document.createDocumentFragment();
-  for (const p of data) {
-    frag.appendChild(createProjectCard(p));
-  }
+  data.forEach((project, index) => {
+    frag.appendChild(createProjectCard(project, index));
+  });
   container.appendChild(frag);
+}
+
+function applyFilter(container: HTMLElement, filter: FilterType): void {
+  for (const card of container.querySelectorAll<HTMLElement>('.project')) {
+    card.hidden = filter !== 'ALL' && !card.classList.contains(`cat-${filter}`);
+  }
 }
 
 function setupFilters(container: HTMLElement, onChange: (filter: FilterType) => void): void {
@@ -158,11 +159,12 @@ function main(): void {
   setupFilters(filtersEl, (next) => {
     current = next;
     setActiveFilter(filtersEl, current);
-    renderProjects(projectsEl, filterProjects(shuffled, current));
+    applyFilter(projectsEl, current);
   });
 
   setActiveFilter(filtersEl, current);
-  renderProjects(projectsEl, filterProjects(shuffled, current));
+  renderProjects(projectsEl, shuffled);
+  applyFilter(projectsEl, current);
 }
 
 if (document.readyState === 'loading') {
