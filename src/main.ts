@@ -9,6 +9,7 @@ if (document.body && !document.body.classList.contains('cork')) {
   document.body.classList.add('cork');
 }
 
+import { ProjectBoard } from './domain/project-board.mjs';
 import {
   type Project,
   type ProjectCategory,
@@ -18,24 +19,17 @@ import {
 
 type FilterType = 'ALL' | ProjectCategory;
 
-const FILTERS: FilterType[] = ['ALL', 'Enjoy', 'Study', 'Create'];
+const FILTERS = ProjectBoard.filters as FilterType[];
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-const FILTER_MAP = new Map(FILTERS.map((value) => [value.toLowerCase(), value] as const));
 
 function getFilterFromQuery(): FilterType {
   const params = new URLSearchParams(location.search);
   const raw = params.get('filter');
-
-  if (!raw) {
-    return 'ALL';
-  }
-
-  const normalized = FILTER_MAP.get(raw.toLowerCase()) ?? 'ALL';
-  if (raw !== normalized) {
+  const normalized = ProjectBoard.normalizeFilter(raw) as FilterType;
+  if (raw && raw !== normalized) {
     params.set('filter', normalized);
     history.replaceState(null, '', `${location.pathname}?${params.toString()}`);
   }
-
   return normalized;
 }
 
@@ -65,7 +59,7 @@ function createProjectCard(project: Project, index: number): HTMLElement {
   img.src = project.image;
   img.alt = project.title;
   img.decoding = 'async';
-  if (index >= 4) img.loading = 'lazy';
+  if (ProjectBoard.imageLoading(index) === 'lazy') img.loading = 'lazy';
   imageWrapper.appendChild(img);
   frame.appendChild(imageWrapper);
 
@@ -95,7 +89,8 @@ function renderProjects(container: HTMLElement, data: readonly Project[]): void 
 
 function applyFilter(container: HTMLElement, filter: FilterType): void {
   for (const card of container.querySelectorAll<HTMLElement>('.project')) {
-    card.hidden = filter !== 'ALL' && !card.classList.contains(`cat-${filter}`);
+    const category = card.className.match(/cat-(\w+)/)?.[1] ?? '';
+    card.hidden = !ProjectBoard.shows(category, filter);
   }
 }
 
