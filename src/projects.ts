@@ -1,3 +1,5 @@
+import { ProjectBoard } from './domain/project-board.mjs';
+
 export type ProjectCategory = 'Enjoy' | 'Study' | 'Create';
 
 export type Project = {
@@ -105,12 +107,5 @@ export const projects: Project[] = [
 ];
 
 export function shuffleArray<T>(input: readonly T[]): T[] {
-  const array = [...input];
-  for (let i = array.length - 1; i > 0; i--) {
-    const r = Math.floor(Math.random() * (i + 1));
-    const tmp = array[i];
-    array[i] = array[r];
-    array[r] = tmp;
-  }
-  return array;
+  return ProjectBoard.shuffle(input);
 }
