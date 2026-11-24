@@ -12,6 +12,10 @@ export class ProjectBoard {
     return found ?? 'ALL';
   }
 
+  static imageLoading(index) {
+    return index >= 4 ? 'lazy' : 'eager';
+  }
+
   /**
    * @param {string} category
    * @param {string} filter

@@ -59,7 +59,7 @@ function createProjectCard(project: Project, index: number): HTMLElement {
   img.src = project.image;
   img.alt = project.title;
   img.decoding = 'async';
-  if (index >= 4) img.loading = 'lazy';
+  if (ProjectBoard.imageLoading(index) === 'lazy') img.loading = 'lazy';
   imageWrapper.appendChild(img);
   frame.appendChild(imageWrapper);
 
