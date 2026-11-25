@@ -55,5 +55,5 @@
 ## 検証計画
 
 - 静的: workflow YAML の構文・条件分岐のレビュー、`npm run lint` / `npm run build`
-- ランタイム: Secrets 未設定時は失敗メッセージが分かる／設定後は同一リポ PR で URL が出る（merge 後の実 PR で確認）
+- ランタイム: Secrets が実行に渡らないとき（Dependabot の pull_request など）はプレビュー公開をスキップしてチェックは成功する。設定後は同一リポの通常 PR で URL が出る
 - 非対象: fork PR スキップ条件のコードレビュー
