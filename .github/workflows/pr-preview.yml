@@ -49,16 +49,20 @@ jobs:
         run: npm run build
 
       - name: Check Surge secrets
+        id: surge-secrets
         env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: |
           if [ -z "$SURGE_LOGIN" ] || [ -z "$SURGE_TOKEN" ]; then
-            echo "::error::SURGE_LOGIN / SURGE_TOKEN が未設定です。リポジトリの Actions Secrets に追加してください（docs/spec-pr-preview-surge.md）。"
-            exit 1
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "SURGE_LOGIN / SURGE_TOKEN がこの実行には渡されていません。プレビューの公開をスキップします。"
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Deploy to Surge
+        if: steps.surge-secrets.outputs.available == 'true'
         id: surge
         env:
           SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
@@ -68,6 +72,7 @@ jobs:
           echo "url=https://${PREVIEW_DOMAIN}" >> "$GITHUB_OUTPUT"
 
       - name: Comment preview URL on PR
+        if: steps.surge-secrets.outputs.available == 'true'
         uses: actions/github-script@v9
         with:
           script: |
